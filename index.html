@@ -1,183 +1,79 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>MyPortfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body>
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="fakeLoader.css">
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+    <script type="text/javascript" src="javascript/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.fullPage.js"></script>
+    <script src="javascript/fadein.js"></script>
+    <script src="javascript/fakeLoader.min.js"></script>
+    <title>Portfolio</title>
+<head>
+<body>
+    <div id="fakeLoader"></div>
+    <div id="fullpage">
+        <div class="section" id="section1">
+            <h1>Welcome to my portfolio!</h1><br/>
+            <a href=#section2></a>
+        </div>
+        <div class="section"id="section2">
+            <h2><strong>About me</strong></h2>
+            <h3>
+                名前:中田　裕貴<br/>
+                誕生日:1月1日<br/>
+                居住地:北海道函館市/未来大127lab<br/>
+                所属:公立はこだて未来大学システム情報科学部 B1<br/>
+                　　:高度ICT演習海洋系礼文班<br/>
+                　　:Linux-FUN　コアメンバー<br/>
+            </h3>
 
-		<!-- Header -->
-			<div id="header">
-
-				<div class="top">
-
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Yuki Nakata</h1>
-							<p>Still a baby engineer</p>
-						</div>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<!--
-
-								Prologue's nav expects links in one of two formats:
-
-								1. Hash link (scrolls to a different section within the page)
-
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-								2. Standard link (sends the user to another page/site)
-
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-							-->
-							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
-
-				</div>
-
-				<div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://twitter.com/chikuwa_IT" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://github.com/chikuwait" class="icon fa-github"><span class="label">Github</span></a></li>
-						</ul>
-
-				</div>
-
-			</div>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
-
-							<header>
-								<h2 class="alt"><strong>Welcome!</strong></a></h2>
-								<!--<p>Ligula scelerisque justo sem accumsan diam quis<br />
-								vitae natoque dictum sollicitudin elementum.</p>-->
-							</header>
-
-							<footer>
-								<!--<a href="#portfolio" class="button scrolly">Magna Aliquam</a>-->
-							</footer>
-
-						</div>
-					</section>
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-						<!--	<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
-
-							<p>
-								<h3>Name</h3>中田 裕貴
-							</p>
-							<p>
-								<h3>Affilation</h3>公立はこだて未来大学システム情報科学部<br/>高度ICT演習海洋系礼文班<br/>Tech-fun<br/>
-							</p>
-							<p>
-								<h3>Locate</h3>愛知県⇔北海道函館市
-							</p>
-							<p>
-								<h3>Birthday</h3>1998/01/01
-							</p>
-							<p>
-								<h3>Interest</h3>Ruby<br/>RubyMotion<br/>Swift,Objective-C(RubyMotion扱う為)<br/>VisualBasic
-							</p>
-							<p>
-								iOS<br/>WindowsPhone<br/>MicrosoftBand
-							</p>
-							<p>
-								<h3>Certificate</h3>応用情報技術者試験<br/>基本情報技術者試験<br/>ITパスポート試験<br/>全商情報処理検定プログラミング部門1級
-							</p>
-
-						</div>
-					</section>
-
-
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-
-							<header>
-								<h2>Portfolio</h2>
-							</header>
-
-						</div>
-					</section>
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-							<form method="post" action="#">
-								<div class="row">
-									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="12u$">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="12u$">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+        </div>
+        <div class="section"id="section3">
+            <h2><strong>Interest</strong></h2>
+            <h3>
+                Ruby<br/>
+                RubyMotion<br/>
+                Ruby on Rails<br/>
+                Objective-C<br/>
+                Visual Basic<br/><br/>
+                WindowsPhone<br/>
+                Microsoft Band<br/>
+                iOS<br/>
+                Linux<br/>
+            <h3/><br/><br/>
+            <h2><strong>Certificate</strong></h2>
+            <h3>
+                応用情報技術者試験<br/>
+                基本情報技術者試験<br/>
+                ITパスポート試験<br/>
+                全商情報処理検定プログラミング部門1級<br/>
+            </h3>
+        </div>
+        <div class="section"id="section4">
+            <h2><strong>Portfolio</strong></h2>
+            <h3>
+                <a href="http://nakasan.azurewebsites.net/Azure-Jetty9-WebSocket-Chat/" target="_blank">Azure・WebSocketの勉強で作ったチャット</a><br/><br/>
+                <a href="https://github.com/chikuwait/zundoko" target="_blank">Rubyで書いたズンドコキヨシ</a><br/><br/>
+                <a href="https://www.slideshare.net/secret/y8TvKX66HPN92O" target="_blank">Hakodate Hack Night LT資料(RubyMotion)</a><br/><br/>
+                <a href="https://www.slideshare.net/secret/GqwhdfdfuPtL0Q" target="_blank">学内向けLinux勉強会 LT資料</a>
+            </h3>
+        </div>
+        <div class="section"id="section5">
+            <h2><strong>Link</strong></h2>
+            <h3>
+                 <img src="img/twitter.png"><br/>
+                 <a href="https://twitter.com/chikuwa_IT" target="_blank">@chikuwa_IT</a><br/>
+                <img src="img/facebook.png"><br/>
+                <a href="https://www.facebook.com/nakasan1998" target="_blank">nakasan1998</a><br/>
+                <img src="img/github.png"><br/>
+                <a href="https://github.com/chikuwait/" target="_blank">chikuwait</a><br/>
+            </h3>
+        </div>
+    </div>
+            <!-- ソースまで見るとはプロ👏
+            そんなプロ👏へのお勧め
+            1.Ruby
+            2.Ruby
+            3.Ruby-->
+</body>
