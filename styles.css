@@ -115,10 +115,6 @@ html, body {
   z-index: 999;
 }
 
-.mdl-demo .mdl-layout__content section:not(:last-of-type) {
-  position: relative;
-  margin-bottom: 48px;
-}
 .mdl-demo section.section--center {
   max-width: 860px;
 }
@@ -186,6 +182,7 @@ html, body {
   font-size: inherit;
   margin: 0;
   margin-bottom: 0.5em;
+  font-size: 0.5rem;
 }
 .mdl-demo section .section__text a {
   text-decoration: none;
@@ -221,11 +218,8 @@ html, body {
 .mdl-demo .mdl-layout__tab-panel:not(#overview) {
   background-color: white;
 }
-.mdl-demo #features section {
-  margin-bottom: 72px;
-}
-.mdl-demo #features h4, #features h5 {
-  margin-bottom: 16px;
+.mdl-demo section {
+  margin-bottom: 100px;
 }
 .mdl-demo .toc {
   border-left: 4px solid #C1EEF4;
@@ -255,4 +249,8 @@ html, body {
 }
 .mdl-demo .mdl-menu__container {
   z-index: 99;
+}
+li{
+    font-size:2rem;
+    margin-top: 15px;
 }
