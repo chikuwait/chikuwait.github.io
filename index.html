@@ -1,184 +1,21 @@
-<!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
+---
+layout: default
+---
 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
+<div class="home">
 
-      https://www.apache.org/licenses/LICENSE-2.0
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
-<html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <title>chikuwait.github.io</title>
-        <!-- Page styles -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css" />
-        <link rel="stylesheet" href="styles.css">
-        <style>
-        #view-source {
-            position: fixed;
-            display: block;
-            right: 0;
-            bottom: 0;
-            margin-right: 40px;
-            margin-bottom: 40px;
-            z-index: 900;
-        }
-        </style>
-    </head>
-    <body>
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <!--メニューバー-->
-            <div class="header mdl-layout__header mdl-layout__header--waterfall">
-                <div class="mdl-layout__header-row">
-                    <span class="title mdl-layout-title">
-                        chikuwait.github.io
-                    </span>
-                    <div class="header-spacer mdl-layout-spacer"></div>
-                    <div class="mdl-textfield--expandable  mdl-textfield--align-right mdl-textfield--full-width">
-                    </div>
-                    <!-- メニュー一覧-->
-                    <div class="android-navigation-container">
-                        <nav class="android-navigation mdl-navigation">
-                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#home">Home</a>
-                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#about">About me</a>
-                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#interest">Interest</a>
-                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#portfolio">Portfolio</a>
-                            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#link">Links</a>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <!-- メイン-->
-            <main class="mdl-layout__content">
-                <a name="home"></a>
-                <div class="home">
-                    <div class="home-pic">
-                    </div>
-                    <div class="mdl-typography--display-3 mdl-typography--font-thin mdl-typography--text-center mdl-typography--font-weightthin">
-                        <div class="home-text">
-                            Welcome to my portfolio page!
-                        </div>
-                    </div>
-                </div>
-                <a name="about"></a>
-                <div class="about">
-                    <div class="about-title mdl-typography--display-3 mdl-typography--font-thin mdl-typography--text-center mdl-typography--font-weightthin">
-                        About me
-                    </div>
-                    <div class="about-text mdl-typography--font-thin mdl-typography--text-left mdl-typography--font-weightthin">
-                        <li>Name : 中田　裕貴(Yuki Nakata)</li>
-                        <li>Screen name : chikuwait</li>
-                        <li>Affiliation : 公立はこだて未来大学システム情報科学部 情報アーキテクチャ学科　情報システムコース
-                            <ol>高度ICT演習海洋系</ol>
-                            <ol>System委員会Jr</ol>
-                        </li>
-                        <li>Community : Hakodate.rb Organizer</li>
-                        <li>Others : Ruby Association 2016 Supporter</li>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-                    </div>
-                    <div class="card-image mdl-card mdl-shadow--4dp">
-                        <div class="mdl-card__title mdl-card--expand"></div>
-                        <div class="mdl-card__actions">
-                            <span class="card-image__filename">Hakodate city</span>
-                        </div>
-                    </div>
-                </div>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-                <a name="interest"></a>
-                <div class=interest>
-                    <div class="mdl-typography--display-3 mdl-typography--font-thin mdl-typography--text-center mdl-typography--font-weightthin">
-                        Interest
-                    </div>
-                    <div class="interest1">
-                        <div class="interest-text-title mdl-typography--display-1 mdl-typography--font-thin mdl-typography--text-left mdl-typography--font-weightthin">
-                            IoT Platform
-                        </div>
-                        <div class ="interest-text mdl-typography--font-thin mdl-typography--font-weightthin">
-                            <li>Armadillo-420</li>
-                            <li>Armadillo-IoT G2</li>
-                        </div>
-                        <div class="interest-text-title mdl-typography--display-1 mdl-typography--font-thin mdl-typography--text-left mdl-typography--font-weightthin">
-                            Micro computer
-                        </div>
-                        <div class ="interest-text mdl-typography--font-thin mdl-typography--font-weightthin">
-                            <li>AVR</li>
-                            <li>Arduino</li>
-                        </div>
-                    </div>
-                    <div class="interest2">
-                        <div class="interest-text-title mdl-typography--display-1 mdl-typography--font-thin mdl-typography--text-left mdl-typography--font-weightthin">
-                            Programming Language
-                        </div>
-                        <div class ="interest-text mdl-typography--font-thin mdl-typography--font-weightthin">
-                            <li>Ruby(mruby, Ruby on Rails)</li>
-                            <li>C/C++</li>
-                            <li>Lisp</li>
-                        </div>
-                        <div class="interest-text-title mdl-typography--display-1 mdl-typography--font-thin mdl-typography--text-left mdl-typography--font-weightthin">
-                            Device/OS
-                        </div>
-                        <div class ="interest-text mdl-typography--font-thin mdl-typography--font-weightthin">
-                            <li>MacBook</li>
-                            <li>MacBook Air</li>
-                            <li>iPhone</li>
-                            <li>AppleTV</li>
-                            <li>Linux(ubuntu,Fedora)</li>
-                        </div>
-                    </div>
-                </div>
-
-                <a name="portfolio"></a>
-                <div class="portfolio">
-                    <div class="mdl-typography--display-3 mdl-typography--font-thin mdl-typography--text-center mdl-typography--font-weightthin">
-                        Portfolio
-                    </div>
-                    <div class="portfolio-text-title mdl-typography--display-1 mdl-typography--font-thin mdl-typography--text-left mdl-typography--font-weightthin">
-                        Programs
-                    </div>
-                    <div class ="portfolio-text mdl-typography--font-thin mdl-typography--font-weightthin">
-                        <li>
-                            <a href="https://github.com/chikuwait/original-lexr">自作構文解析器</a>
-                        </li>
-                    </div>
-                    <div class="portfolio-text-title mdl-typography--display-1 mdl-typography--font-thin mdl-typography--text-left mdl-typography--font-weightthin">
-                        Others
-                    </div>
-                    <div class ="portfolio-text mdl-typography--font-thin mdl-typography--font-weightthin">
-                        <li>自作Arduino</li>
-                        <li>Ruby on Railsハンズオン　主催</li>
-                        <li>学内向けRaspberry Piハンズオン　アシスタント</li>
-                        <li>学内向けC言語勉強　アシスタント</li>
-                        <li>学内向けLinux勉強会　アシスタント</li>
-                    </div>
-
-                </div>
-                <a name="link"></a>
-                <div class="link">
-                    <div class="mdl-typography--display-3 mdl-typography--font-thin mdl-typography--text-center mdl-typography--font-weightthin">
-                        Links<br>
-                    </div>
-                </div>
-            </main>
-            <!-- フッター-->
-            <footer class="android-footer mdl-mini-footer">
-                <div class="mdl-mini-footer--middle-section">
-                    <p class="mdl-typography--font-light">©2016 Yuki Nakata</p>
-                </div>
-            </footer>
-        </div>
-        <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-    </body>
-</html>
+</div>
