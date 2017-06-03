@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Test"
+title:  "ブログはじめました"
 date:   2017-05-23 23:51
 categories: jekyll update
 ---
 
-# hogehoge
+jekyllでブログもどき始めました。
