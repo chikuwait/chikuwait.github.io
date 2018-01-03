@@ -70,10 +70,9 @@ html, body {
   height: auto;
 }
 .mdl-portfolio .mdl-card .mdl-card__supporting-text {
-  margin-top: 40px;
+  margin-top: 10px;
   margin-left: 20px;
   margin-right: 10px;
-  margin-bottom: 40px;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -110,9 +109,6 @@ html, body {
 .mdl-portfolio section.section--center {
   max-width: 920px;
 }
-.mdl-portfolio #features section.section--center {
-  max-width: 620px;
-}
 .mdl-portfolio section > header{
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -136,23 +132,7 @@ html, body {
   top: 8px;
   right: 8px;
 }
-.mdl-portfolio section .section__circle {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-flex-grow: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-          flex-shrink: 1;
-}
+
 .mdl-portfolio section .section__text {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -169,12 +149,6 @@ html, body {
 }
 .mdl-portfolio section .section__text a {
   text-decoration: none;
-}
-.mdl-portfolio section .section__circle-container > .section__circle-container__circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
-  margin: 8px 0;
 }
 .mdl-portfolio section.section--footer .section__circle--big {
   width: 100px;
