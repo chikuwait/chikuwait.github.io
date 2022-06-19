@@ -1,9 +1,7 @@
 ---
 title: How Does Traceroute Get Network Route?
+date : 25-04-2022
 ---
-
-Posted: April 25, 2022
-
 
 ## 1.Introduction
 Traceroute is a tool that obtains a network route to destination nodes for an IP (Internet Protocol) network.
