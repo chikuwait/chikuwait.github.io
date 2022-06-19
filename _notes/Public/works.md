@@ -1,9 +1,8 @@
 ---
 title : Works
 notetype : feed
-date : 15-04-2021
+date : 17-04-2022
 ---
-Last Updated: April 17, 2022
 
 ## 1. Publication & Presentation
 ### Thesis
