@@ -1,7 +1,7 @@
 ---
 title : Works
 notetype : feed
-date : 17-04-2022
+date : 11-12-2022
 ---
 
 ## 1. Publication & Presentation
@@ -29,6 +29,9 @@ date : 17-04-2022
 
 ### Oral Presentation
 #### No Peer-reviewed
+- [異種OS機能連携によるセキュアコンテナ実現に向けた検討](http://id.nii.ac.jp/1001/00222600/)
+  - 鈴木進太郎，**中田裕貴**，松原克弥
+  - コンピュータシステム・シンポジウム論文集，2022，22-29 (2022-11-28)
 - [マイクロサービス型システムの監視におけるグラフDB採用によるメトリック問い合わせ最適化の検討](http://id.nii.ac.jp/1001/00209409/)
   - 宮越七菜，林友佳，**中田裕貴**，松原克弥
   - 研究報告インターネットと運用技術（IOT），2021-IOT-52(16)，1-8 (2021-02-22)，2188-8787
@@ -46,6 +49,9 @@ date : 17-04-2022
   - 研究報告インターネットと運用技術（IOT），2018-IOT-42(1)，1-8 (2018-06-21)，2188-8787
 
 #### Technical-community(No Paper)
+- [BitVisorであやつるコンテナネットワーク](https://speakerdeck.com/chikuwait/bitvisorsummit11)
+  - **中田裕貴**
+  - BitVisor Summit 11，2022年12月
 - [SKBパケット選抜総選挙 〜 僕たちは誰について行けばいい？](https://speakerdeck.com/chikuwait/osc21do)
   - **中田裕貴**
   - Open Source Conference 2021 Online Hokkaido，2021年6月
