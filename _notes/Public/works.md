@@ -1,7 +1,7 @@
 ---
 title : Works
 notetype : feed
-date : 11-12-2022
+date : 30-09-2023
 ---
 
 ## 1. Publication & Presentation
@@ -17,6 +17,9 @@ date : 11-12-2022
   - 教育システム情報学会誌 37(2)，155-160，2020-04-01
 
 ### International Conference
+- [Reducing Attack Surface with Container Transplantation for Lightweight Sandboxing](https://dl.acm.org/doi/10.1145/3609510.3609820)
+  - **Yuki Nakata**, Shintaro Suzuki and Katsuya Matsubara
+  - 14th ACM SIGOPS Asia-Pacific Workshop on Systems (APSys 2023), pp.58–64, August 2023. 
 - [Concentrated Isolation for Container Networks Toward Application-aware Sandbox Tailoring](https://dl.acm.org/doi/10.1145/3468737.3494092)
   - **Yuki Nakata**, Katsuya Matsubara and Ryosuke Matsumoto
   - IEEE/ACM 14th International Conference on Utility and Cloud Computing (UCC 2021), Article No.:15, pp.1-10, December 2021. 
@@ -68,9 +71,9 @@ date : 11-12-2022
   - **Yuki Nakata**
   - RubyKaigi 2017，2017年9月
 
-## 2. Award
-- 未来大学賞，2022年3月22日
-- 2021年度コンピュータサイエンス領域奨励賞（CS領域奨励賞），情報処理学会　コンピュータサイエンス領域
-- 最優秀若手発表賞，情報処理学会　第32回コンピュータシステム・シンポジウム（ComSys 2020）
-- 優秀ポスター賞，情報処理学会　第13回 インターネットと運用技術シンポジウム（IOTS 2020）
-- 未来大学賞，2019年3月22日
+## 2. Awards
+- Future University Award, Future University Hakodate, 2022
+- IPSJ Computer Science Research Award for Young Scientists, Information Processing Society of Japan (IPSJ), 2022
+- Best Presentation Award for Young Scientists, the 32nd IPSJ Computer Systems Symposium (ComSys2020), 2020
+- Best Poster Award, the 13th IPSJ Internet and Operation Technology Symposium (IOTS2020), 2020
+- Future University Award, Future University Hakodate, 2019
