@@ -7,9 +7,9 @@ date : 30-09-2023
 ## 1. Publication & Presentation
 ### Thesis
 - Master Thesis
-  - コンテナ型クラウドサービス基盤における集中型ネットワーク隔離手法
+  - Concentrated Network Isolation for Containerized Cloud Services
 - Graduation Thesis
-  - ハードウェア仮想化技術を用いたセキュアな軽量コンテナの実現手法に関する研究
+  - A Robust and Light-weight Isolation for Containers with Assists of Hardware Virtualization Technology
 
 ### Journal
 - [BLEビーコンを活用した地域課題解決型PBLの実践](https://www.jstage.jst.go.jp/article/jsise/37/2/37_370210/_article/-char/ja/)
