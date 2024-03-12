@@ -1,7 +1,7 @@
 ---
 title : Works
 notetype : feed
-date : 30-09-2023
+date : 12-03-2024
 ---
 
 ## 1. Publication & Presentation
@@ -12,11 +12,14 @@ date : 30-09-2023
   - A Robust and Light-weight Isolation for Containers with Assists of Hardware Virtualization Technology
 
 ### Journal
-- [BLEビーコンを活用した地域課題解決型PBLの実践](https://www.jstage.jst.go.jp/article/jsise/37/2/37_370210/_article/-char/ja/)
+- [A Report on the PBL Experiences toward Resolution of Local Issues by Utilizing BLE Beacons](https://www.jstage.jst.go.jp/article/jsise/37/2/37_370210/_article/-char/ja/)
   - **中田裕貴**，松原克弥
   - 教育システム情報学会誌 37(2)，155-160，2020-04-01
 
 ### International Conference
+- [Penetration Testing for Linux Jail as an Exploit-resistant Linux Container](https://2024.asiabsdcon.org/program.html)
+  - Shintaro Suzuki, **Yuki Nakata** and Katsuya Matsubara
+  - AsiaBSDCon 2024, March 2024.
 - [Reducing Attack Surface with Container Transplantation for Lightweight Sandboxing](https://dl.acm.org/doi/10.1145/3609510.3609820)
   - **Yuki Nakata**, Shintaro Suzuki and Katsuya Matsubara
   - 14th ACM SIGOPS Asia-Pacific Workshop on Systems (APSys 2023), pp.58–64, August 2023. 
@@ -26,12 +29,22 @@ date : 30-09-2023
 
 
 ### Poster Presentation
+- [実行時性能と両立するWebAssemblyライブマイグレーションの実現に向けたAhead-Of-Timeコンパイラの分析](https://sites.google.com/site/jssstdsw/dsw2023)
+  -  **中田裕貴**, 藤井大悟, 松原克弥
+  -  第21回ディペンダブルシステムワークショップ(DSW 2023)，ポスター発表，2023-12-14
 - (優秀ポスター賞)[マルチテナント向けコンテナ集積型クラウドサービスにおけるネットワーク分離・制御方式の検討](http://id.nii.ac.jp/1001/00208130/)
   - **中田裕貴**，松本亮介，松原克弥
   - インターネットと運用技術シンポジウム論文集，ポスター発表，pp.119-120，2020-11-26(Peer-reviewed)
 
+
 ### Oral Presentation
 #### No Peer-reviewed
+- [異種OS機能連携によるセキュアコンテナ実現に向けたFreeBSD上でのCNI準拠コンテナネットワーキングの実現](http://id.nii.ac.jp/1001/00232922/)
+  - 坂口颯麻，鈴木進太郎，**中田裕貴**，松原克弥
+  - 研究報告インターネットと運用技術（IOT），2024-IOT-64(16)，1-7 (2024-03-05) 
+- [ランタイム中立なWebAssemblyライブマイグレーションの実現可能性検討](http://id.nii.ac.jp/1001/00231273/)
+  - 藤井大悟，松原克弥，**中田裕貴**
+  - コンピュータシステム・シンポジウム論文集，2022，14-20 (2023-11-30)
 - [異種OS機能連携によるセキュアコンテナ実現に向けた検討](http://id.nii.ac.jp/1001/00222600/)
   - 鈴木進太郎，**中田裕貴**，松原克弥
   - コンピュータシステム・シンポジウム論文集，2022，22-29 (2022-11-28)
