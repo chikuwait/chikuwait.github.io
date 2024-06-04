@@ -17,6 +17,9 @@ date : 12-03-2024
   - 教育システム情報学会誌 37(2)，155-160，2020-04-01
 
 ### International Conference
+- [Stateful VM Migration Among Heterogeneous WebAssembly Runtimes for Efficient Edge-cloud Collaborations](https://dl.acm.org/doi/10.1145/3642968.3654816)
+  - Daigo Fujii, Katsuya Matsubara and **Yuki Nakata** 
+  - ACM 7th International Workshop on Edge Systems, Analytics and Networking (EdgeSys 2024), pp.19–24, April 2024. 
 - [Penetration Testing for Linux Jail as an Exploit-resistant Linux Container](https://2024.asiabsdcon.org/program.html)
   - Shintaro Suzuki, **Yuki Nakata** and Katsuya Matsubara
   - AsiaBSDCon 2024, March 2024.
