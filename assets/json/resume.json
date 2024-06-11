@@ -1,0 +1,170 @@
+{
+  "basics": {
+    "name": "Yuki Nakata",
+    "Handle": "chikuwait or chikuwa",
+    "label": "Ph.D. Student and Researcher",
+    "image": "",
+    "email": "chikuwa.1703 _ gmail.com",
+    "url": "https://www.chikuwa.it/",
+    "location": {
+      "address": "2712 Broadway St",
+      "postalCode": "CA 94115",
+      "city": "San Francisco",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [
+      {
+        "network": "X (Twitter)",
+        "username": "chiku_wait",
+        "url": "https://x.com/chiku_wait"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Research and Development Group, Resarch Center, SAKURA internet Inc.",
+      "position": "Researcher",
+      "url": "https://research.sakura.ad.jp/",
+      "startDate": "2022-04",
+      "summary": "Research on System Software for Cloud Computing"
+    },
+    {
+      "name": "Resarch Center, SAKURA internet Inc.",
+      "position": "Research Internship",
+      "url": "https://research.sakura.ad.jp/",
+      "startDate": "2020-08",
+      "endDate": "2023-03",
+      "summary": "Research on System Software for Cloud Computing",
+      "highlights": ["Robust and High-performance Container Sandboxing Method"]
+    },
+    {
+      "name": "Pepabo R&D Institute, GMO Pepabo, Inc.",
+      "position": "Research Assistant",
+      "url": "https://rand.pepabo.com/",
+      "startDate": "2018-04",
+      "endDate": "2018-12",
+      "summary": "Research on Middleware for Website Hosting",
+      "highlights": ["Rapid Container Startup Mechanism for Website Hosting"]
+    },
+    {
+      "name": "Pepabo R&D Institute and Developer Productivity Team, GMO Pepabo, Inc.",
+      "position": "Research Engineer Internship",
+      "url": "https://rand.pepabo.com/",
+      "startDate": "2017-09",
+      "endDate": "2017-09",
+      "summary": "Research and Develop on Middleware for Website Hosting",
+      "highlights": ["Improvement OSS Container Runtime", "Development of Nginx Module Measures Against Memory Leak"]
+    },
+    {
+      "name": "K Laboratory, KLab Inc.",
+      "position": "Research Engineer Internship",
+      "url": "https://www.klab.com/en/",
+      "startDate": "2017-08",
+      "endDate": "2017-09",
+      "summary": "Research and Develop on System Software",
+      "highlights": ["Improvement Script Language VM and Hypervisor"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Graduate School of Systems Information Science, Future University Hakodate",
+      "location": "Hokkaido, Japan",
+      "url": "https://www.fun.ac.jp/en",
+      "area": "OS and System Software Lab. <br> Advisor: Prof. Hiroshi Inamura and Prof. Katsuya Matsubara",
+      "studyType": "Ph.D. in Systems Information Science",
+      "startDate": "2024-04"
+    },
+    {
+      "institution": "Advanced ICT Field, Graduate School of Systems Information Science, Future University Hakodate",
+      "location": "Hokkaido, Japan",
+      "url": "https://www.fun.ac.jp/en",
+      "area": "OS and System Software Lab. <br> Advisor: Prof. Katsuya Matsubara",
+      "studyType": "Master of Science in Systems Information Science",
+      "startDate": "2020-04",
+      "endDate": "2022-03",
+      "courses": ["Computer Science", "Software Engineering", "Service Design"]
+    },
+    {
+      "institution": "Advanced ICT Course, Department of Media Architecture, School of Systems Information Science, Future University Hakodate",
+      "location": "Hokkaido, Japan",
+      "url": "https://www.fun.ac.jp/en",
+      "area": "OS and System Software Lab. <br> Advisor: Prof. Katsuya Matsubara",
+      "studyType": "Bachelor of Science in Systems Information Science",
+      "startDate": "2016-04",
+      "endDate": "2020-03",
+      "courses": ["Computer Science", "Software Engineering", "Service Design"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Future University Award (MSc)",
+      "date": "2022",
+      "awarder": "Future University Hakodate",
+      "summary": "This award is given to students for excellence in academic achievement and research work."
+    },
+    {
+      "title": "IPSJ Computer Science Research Award for Young Scientists",
+      "date": "2022",
+      "awarder": "Information Processing Society of Japan (IPSJ)",
+      "url": "https://www.ipsj.or.jp/award/cs-award.html",
+      "summary": "The award is given to young IPSJ members who have given particularly excellent research presentations or who have achieved results of equal or greater merit."
+    },
+    {
+      "title": "Best Presentation Award for Young Scientists",
+      "date": "2020",
+      "awarder": "the 32nd IPSJ Computer Systems Symposium (ComSys2020)",
+      "url": "https://www.ipsj.or.jp/award/os-award2.html",
+      "summary": "This award is given to young researchers who have given excellent presentations at research conferences and symposiums."
+    },
+    {
+      "title": "Best Poster Award",
+      "date": "2020",
+      "awarder": "the 13th IPSJ Internet and Operation Technology Symposium (IOTS2020)",
+      "url": "https://www.iot.ipsj.or.jp/symposium/iots2020/",
+      "summary": ""
+    },
+    {
+      "title": "Future University Award (BSc)",
+      "date": "2019",
+      "awarder": "Future University Hakodate",
+      "summary": "This award is given to students for excellence in academic achievement and research work."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Applied Information Technology Engineer Examination",
+      "date": "2014-10",
+      "issuer": "Ministry of Economy, Trade and Industry",
+      "url": "https://www.ipa.go.jp/shiken/kubun/ap.html",
+      "icon": "fa-solid fa-tag"
+    },
+    {
+      "name": "Fundamental Information Technology Engineer Examination",
+      "date": "2014-04",
+      "issuer": "Ministry of Economy, Trade and Industry",
+      "url": "https://www.ipa.go.jp/shiken/kubun/fe.html",
+      "icon": "fa-solid fa-tag"
+    }
+  ],
+  "interests": [
+    {
+      "name": "System Software",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Operating System (OS)",
+        "Virtualization (e.g., Container, VM and Virtual-ISA)",
+        "Software Defined Networking (SDN)",
+        "Trusted Execution Environment (TEE)",
+        "Software Security",
+        "Middleware (e.g, HTTP Server and Compiler)"
+      ]
+    },
+    {
+      "name": "Internet and Software System Operation Technology",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+      ]
+    }
+  ]
+}

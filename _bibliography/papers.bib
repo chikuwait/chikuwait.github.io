@@ -1,0 +1,281 @@
+---
+---
+@inproceedings{10.1145/3642968.3654816,
+  author = {Fujii, Daigo and Matsubara, Katsuya and Nakata, Yuki},
+  title = {Stateful VM Migration Among Heterogeneous WebAssembly Runtimes for Efficient Edge-cloud Collaborations},
+  year = {2024},
+  isbn = {9798400705397},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3642968.3654816},
+  doi = {10.1145/3642968.3654816},
+  abstract = {WebAssembly (Wasm) has been attracting attention as a common platform for edge computing thanks to its architecture neutrality, sandboxing for security, and lightweight characteristics that fit the requirements for distributed and cooperated processing with heterogeneous compute nodes, which consist of edge devices and clouds. Virtual machine (VM) migration technology enables seamless and flexible workload offloading on edge-cloud collaboration, but unfortunately, VM migration among different Wasm runtimes is complicated since the Wasm standardization does not specify the implementation design of internal runtime very well. Nevertheless, many implementations of Wasm runtime already exist, and each has different characteristics. We therefore aim to implement a stateful VM migration among most of the major Wasm runtimes. In this work, we prototyped a VM migration mechanism between WasmEdge and WAMR to investigate the technical challenges and determine the feasibility of implementing the runtime-neutral VM migration. Our experimental results on heterogenous VM migration demonstrate the value of coexisting multiple runtimes well-suited for each edge and cloud and seamlessly offloading the workloads among them.},
+  booktitle = {Proceedings of the 7th International Workshop on Edge Systems, Analytics and Networking(EdgeSys '24)},
+  pages = {19–24},
+  numpages = {6},
+  keywords = {Application checkpointing, Wasm, live migration},
+  location = {<city>Athens</city>, <country>Greece</country>},
+  bibtex_show={true},
+  abbr={Peer-reviewed}
+}
+
+@inproceedings{10.1145/3609510.3609820,
+  author = {Nakata, Yuki and Suzuki, Shintaro and Matsubara, Katsuya},
+  title = {Reducing Attack Surface with Container Transplantation for Lightweight Sandboxing},
+  year = {2023},
+  isbn = {9798400703058},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3609510.3609820},
+  doi = {10.1145/3609510.3609820},
+  abstract = {Containers, which have evolved in Linux primarily, have become a significant trend in the cloud due to their lightweight virtualization and growing convenient ecosystem. However, the laxer isolation of containerization also introduces attack surfaces on the underlying Linux kernel. Unfortunately, combining other virtualizations, such as the traditional VM and interposition by application kernel, for sandboxing could spoil the lightweight and scalable nature of the containers. In this study, we propose another approach to lightweight sandboxing that focuses on the fact that such attackers have mostly assumed containers rely on Linux. It can avert major vulnerability exploits derived from Linux by transplanting Linux containers onto the FreeBSD kernel. Furthermore, it can fortify the isolation by transparently applying "Capsicum," a unique sandbox mechanism that is nonstandard in Linux, to the transplanted containers. This paper analyzes vulnerabilities faced by Linux containers, identifies technical issues in transplanting Linux containers onto FreeBSD, and designs a mechanism to transparently apply the Capsicum sandbox to Linux applications to explore the feasibility of our approach.},
+  booktitle = {Proceedings of the 14th ACM SIGOPS Asia-Pacific Workshop on Systems (APSys '23)},
+  pages = {58–64},
+  numpages = {7},
+  keywords = {capability-based security and system call emulation, container security},
+  location = {Seoul, Republic of Korea},
+  bibtex_show={true},
+  selected={true},
+  abbr={Peer-reviewed}
+}
+
+@inproceedings{10.1145/3468737.3494092,
+  author = {Nakata, Yuki and Matsubara, Katsuya and Matsumoto, Ryosuke},
+  title = {Concentrated Isolation for Container Networks Toward Application-aware Sandbox Tailoring},
+  year = {2021},
+  isbn = {9781450385640},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3468737.3494092},
+  doi = {10.1145/3468737.3494092},
+  abstract = {Containers provide a lightweight and fine-grained isolation for computational resources such as CPUs, memory, storage, and networks, but their weak isolation raises security concerns. As a result, research and development efforts have focused on redesigning truly sandboxed containers with system call intercept and hardware virtualization techniques such as gVisor and Kata Containers. However, such fully integrated sandboxing could overwhelm the lightweight and scalable nature of the containers. In this work, we propose a partially fortified sandboxing mechanism that concentratedly fortifies the network isolation, focusing on the fact that containerized clouds and the applications running on them require different isolation levels in accordance with their unique characteristics. We describe how to efficiently implement the mechanism to fortify network isolation for containers with a para-passthrough hypervisor and report evaluation results with benchmarks and real applications. Our findings demonstrate that this fortified network isolation has good potential to tailor sandboxes for containerized PaaS/FaaS clouds.},
+  booktitle = {Proceedings of the 14th IEEE/ACM International Conference on Utility and Cloud Computing (UCC '21)},
+  articleno = {15},
+  numpages = {10},
+  keywords = {traffic control, security, packet filtering and routing},
+  location = {Leicester, United Kingdom},
+  bibtex_show={true},
+  selected={true},
+  abbr={Peer-reviewed}
+}
+
+@article{published_papers/46105696,
+  title = {Penetration Testing for Linux Jail as Exploit-resistant Linux Container},
+  author = {Shintaro Suzuki and Yuki Nakata and Katsuya Matsubara},
+  journal = {AsiaBSDCon 2024 Proceedings},
+  month = {3},
+  pages = {51--56},
+  year = {2024},
+  abstract = {Container virtualization technologies such as Docker [1] are now widely used as lightweight application execution environments in cloud services. They are based on OS pro- cesses, which are lightweight compared with traditional VMs, resulting in faster startup and a lower memory footprint. Many cloud services [2], [3] take advantage of the characteristics of containers for rapid scale-out, scale-in, and more efficient resource usage. We aim to achieve a container sandbox with Container Transplantation in which Linux containers run compatibly in another OS and apply another OS-specific security mechanism to resolve the trade-off between robust container isolation and container characteristics and application performance. Since many cloud services utilize Linux as the environment for hosting containers, vulnerabilities in the Linux kernel and its functions are directly linked to container vulnerabilities. Unfortunately, attacks that exploit those vulnerabilities often have fatal adverse effects that make it impossible for cloud services to run correctly, such as unauthorized access to hosts and other containers through privilege escalation and the theft of sensitive information. We have proposed that executing Linux containers in another OS can avoid these various attacks that exploit vulnerabilities related to the Linux kernel and its functionality. Moreover, it is possible to apply unique security models and functions implemented in various OSes to Linux containers to achieve more finely-grained access control and isolation between containers resilient to attacks targeting specific OSes. This paper investigates the possibility of resisting attacks using Linux kernel vulnerabilities through the Linux jails. Among the vulnerabilities in Linux Kernel 4.4, emulated by Linux jails on FreeBSD13.2, we have chosen those that the Linuxulator can emulate. Then, we categorized the Linux kernel vulnerabilities that the secure container must be able to avoid, tried the attacks on both Linux and the Linuxulator, and summarized the success or failure of the attacks. Linux- ulator, and summarized the success or failure of the attacks. Our experimental results illustrate that the Linuxulator can efficiently repel exploits against Linux kernel vulnerabilities.},
+  bibtex_show={true},
+  abbr={Peer-reviewed}
+}
+
+@article{中田 裕貴2020370210,
+  title={BLEビーコンを活用した地域課題解決型PBLの実践},
+  author={裕貴 中田 and 克弥 松原},
+  journal={教育システム情報学会誌},
+  volume={37},
+  number={2},
+  pages={155-160},
+  year={2020},
+  doi={10.14926/jsise.37.155},
+  bibtex_show={true},
+  abbr={Peer-reviewed}
+}
+
+@inproceedings{weko_233036_1,
+  author	 = "颯麻 坂口 and 進太郎 鈴木 and 裕貴 中田 and 克弥 松原",
+  title	 = "異種OS機能連携によるセキュアコンテナ実現に向けたFreeBSD上でのCNI準拠コンテナネットワーキングの実現",
+  year 	 = "2024",
+  institution	 = "公立はこだて未来大学, 公立はこだて未来大学, さくらインターネット株式会社, 公立はこだて未来大学",
+  booktitle = "研究報告インターネットと運用技術（IOT）",
+  number	 = "16",
+  month	 = "mar",
+  abstract={クラウドコンピューティング基盤における軽量なアプリケーション実行環境として，コンテナ型仮想化が広く活用されている．コンテナをマルチテナント・クラウドで利用する場合，OS カーネル共有に起因する脆弱性回避のために，追加で堅牢なコンテナ間隔離が必要となる．著者らは，FreeBSD 上で Linux コンテナ実行環境を実現することで，追加の隔離にかかるオーバヘッドを最小化しつつ，OS カーネルの脆弱性に対する攻撃の回避を行う手法を提案している．本提案手法では，コンテナ内のアプリケーションやユーザから異種 OS 上で動作していることを隠蔽できることが，攻撃回避成功の要となっている．しかし，本手法が異種 OS として採用する FreeBSD では，コンテナのネットワーク分離を実現できる vnet 機能が，Linux コンテナでネットワーク分離に用いられている Network Namespace 機能と互換性がないことが課題となっている．特に，Kubernates の Pod などで必要となる，複数のコンテナ間で共有されたネットワーク空間を実現することが難しい．本研究では，jail の入れ子構造の仕組みを活用して，FreeBSD 上で Linux Network Namespace 互換機能を実装し，コンテナランタイムから CNI 仕様に準拠したコンテナネットワーキング制御を可能にすることで，異種 OS 上での動作を隠蔽できる Linux 互換コンテナネットワーキングを実現する．},
+  bibtex_show={true}
+}
+
+@inproceedings{weko_231383_1,
+  author	 = "大悟 藤井 and 克弥 松原 and 裕貴 中田",
+  title	 = "ランタイム中立なWebAssemblyライブマイグレーションの実現可能性検討",
+  booktitle	 = "コンピュータシステム・シンポジウム論文集",
+  year 	 = "2023",
+  volume	 = "2023",
+  number	 = "",
+  pages	 = "14--20",
+  month	 = "nov",
+  abstract = "OSやハードウェアアーキテクチャに対する中立性や安全性などの観点から，クラウドコンピューティング実行基盤としてのWebAssemblyが注目されている．WebAssemblyの実行環境は，軽量さが特徴のWebAssembly Micro Runtime (WAMR)，クラウドネイティブ向けの機能が充実しているWasmEdgeなど，様々なランタイムが存在し，それらランタイムごとにその特性が異なる．特に，エッジデバイス，エッジクラウド，データセンタクラウドが連携するエッジコンピューティングにおいては，各システム基盤の用途や計算資源制約やに応じて最適なWebAssemblyランタイムが異なるため，求められる応答性能や負荷状況に応じて，複数のシステム基盤を使い分けながら計算処理を継続実行できるライブマイグレーション技術が有用である．本研究では，異なるWebAssemblyランタイム間で，実行中のアプリケーションをマイグレーションできる機能の実現可能性を検討する．WasmEdgeとWAMRの2種類のWebAssemblyランタイムを対象として，WebAssembly仕様と各ランタイム実装の分析から，アプリケーションの実行状態を再現するのに必要な情報を特定し，実行状態を保存・復元する機能をそれぞれのランタイムへプロトタイプ実装した．さらに，実験により，それぞれのランタイムのアプリケーション実行性能を評価し，マイグレーション機能の実装にともなうオーバヘッドを確認した．",
+  bibtex_show={true}
+}
+
+@inproceedings{weko_222709_1,
+  author	 = "進太郎 鈴木 and 裕貴 中田 and 克弥 松原",
+  title	 = "異種OS機能連携によるセキュアコンテナ実現に向けた検討",
+  booktitle	 = "コンピュータシステム・シンポジウム論文集",
+  year 	 = "2022",
+  volume	 = "2022",
+  number	 = "",
+  pages	 = "22--29",
+  month	 = "nov",
+  abstract = "クラウドサービスにおけるアプリケーション実行環境として広く活用されているコンテナ型仮想化は，不特定多数のユーザが単一のホスト内に同居するため，コンテナ間の隔離を強固にする必要がある．しかし，追加の隔離環境は，堅牢なコンテナ間隔離を実現する代わりに，コンテナの高速な起動という特性やアプリケーション性能が損なわれる．このトレードオフを解消するために，我々は異種 OS 機能連携によって OS カーネルの脆弱性を悪用した攻撃を回避し，異種 OS 固有のセキュリティ機能を利用できるセキュアコンテナの実現を目指している．本稿では，FreeBSD の OS 機能を活用した Linux コンテナ互換実行と FreeBSD 固有のセキュリティ機能の適用について検討し，異種 OS 機能連携による特定 OS カーネルを対象にした攻撃回避の実現可能性について議論する．",
+  bibtex_show={true}
+}
+
+@inproceedings{weko_209511_1,
+  author	 = "七菜 宮越 and 友佳 林 and 裕貴 中田 and 克弥 松原",
+  title	 = "マイクロサービス型システムの監視におけるグラフDB採用によるメトリック問い合わせ最適化の検討",
+  booktitle = "研究報告インターネットと運用技術（IOT）",
+  year 	 = "2021",
+  institution	 = "公立はこだて未来大学, 公立はこだて未来大学, 公立はこだて未来大学, 公立はこだて未来大学",
+  number	 = "16",
+  month	 = "feb",
+  abstract = "システムの拡張性や可用性などを向上する設計手法のひとつとして，マイクロサービス・アーキテクチャが注目されている．一方，マイクロサービス型システムでは，負荷に応じたスケールアウトなどの対応により，コンポーネントの数やそれらの依存関係が動的に変化する．分散システムの障害が複数要因の組み合わせで起きる傾向とあいまって，これら依存関係の動的変化は，マイクロサービス型システムの監視における障害発生時の状態把握や障害原因の追究を難しくしている．著者らは，依存関係の動的変化をともなう分散システムを対象とした監視において，コンポーネント間の依存関係に着目しつつ，システムの状態を迅速に把握できる可視化手法を提案している．本研究は，マイクロサービス型システムの監視において収集されるメトリックを管理するデータベースとして，グラフ DB の採用を検討する．本稿では，依存関係に着目したシステム状態可視化にともなって発行されるメトリック問い合わせを分析することで，依存関係情報や各メトリックの保存と探索におけるグラフ DB の有用性を議論する．また，監視ツールの評価に用いるためのマイクロサービス型システムの監視テストベッドの構築についても紹介する．",
+  bibtex_show={true}
+}
+
+@inproceedings{weko_208087_1,
+  author	 = "裕貴 中田 and 克弥 松原 and 亮介 松本",
+  title	 = "コンテナ型クラウドサービス基盤におけるハードウェア仮想化技術の併用によるネットワーク制御の検討",
+  booktitle	 = "コンピュータシステム・シンポジウム論文集",
+  year 	 = "2020",
+  volume	 = "2020",
+  number	 = "",
+  pages	 = "18--25",
+  month	 = "nov",
+  abstract = "マルチテナント方式のクラウドサービス基盤では，各テナントが平等にリソースを使用できる公平性，テナント間分離による性能低下を抑えたインスタンス性能，既存アプリケーションを改変せずに実行可能とする利便性の3つのサービス品質に十分な配慮を行う必要がある．近年注目されているコンテナ型仮想化技術によるクラウドサービス基盤では，複数のテナントそれぞれに対して，1つのプラットフォーム上で動作するプロセス単位で分離したインスタンスを提供する．その際に広く用いられているOSによるネットワークインタフェースの多重化方式は，パケット送受信の際に多くのOS機能を経由することでネットワークI/O性能が低下する課題がある．この課題に対して，OSカーネルのバイパスなどの高速にパケット処理を行うパケット送受信経路の最適化技術や，軽量なOS機能の実装などのOS処理に対する最適化技術がある．しかし，これらの手法は，トラフィックの公平性，ネットワークI/O性能，利便性のサービス品質すべてを最適にすることが難しい．本研究では，各テナントに割り当てたプロセスのそれぞれに対して，ハードウェア仮想化技術を用いた軽量ハイパーバイザにより実現する仮想ネットワークインタフェースを提供し，ネットワークI/O性能と利便性を最大限維持しつつ，それら仮想ネットワークインタフェースへのトラフィック制御によりテナント間の公平性を実現する手法を提案する．本手法は，コンテナ型仮想化技術向けのネットワーク機能においてハードウェア仮想化技術を併用することで，OSカーネルのバイパスなどを使用した際のトラフィック制御，複数のOS機能間経由にともなう冗長処理削減による性能低下抑制，既存OS向けアプリケーションをそのまま利用できる利便性を両立できる．",
+  bibtex_show={true},
+  award={Best Presentation Award for Young Scientists, the 32nd IPSJ Computer Systems Symposium (ComSys2020) and IPSJ Computer Science Research Award for Young Scientists, Information Processing Society of Japan (IPSJ)}
+}
+
+@inproceedings{weko_208232_1,
+  author	 = "裕貴 中田 and 亮介 松本 and 克弥 松原",
+  title	 = "マルチテナント向けコンテナ集積型クラウドサービスにおけるネットワーク分離・制御方式の検討",
+  booktitle	 = "インターネットと運用技術シンポジウム論文集",
+  year 	 = "2020",
+  volume	 = "2020",
+  number	 = "",
+  pages	 = "119--120",
+  month	 = "nov",
+  bibtex_show={true},
+  abbr= {Peer-reviewed},
+  abbr2= {Poster},
+  award={Best Poster Award, the 13th IPSJ Internet and Operation Technology Symposium (IOTS2020)}
+}
+
+@inproceedings{weko_203344_1,
+  author	 = "裕貴 中田 and 克弥 松原 and 亮介 松本",
+  title	 = "マルチテナント向けコンテナ環境における軽量かつ柔軟なARPスプーフィング対策の実現",
+  year 	 = "2020",
+  pages	 = "1-8",
+  booktitle = "研究報告システムソフトウェアとオペレーティング・システム（OS）",
+  institution	 = "公立はこだて未来大学, 公立はこだて未来大学, さくらインターネット株式会社さくらインターネット研究所",
+  number	 = "12",
+  month	 = "feb",
+  abstract = "近年，コンテナ型仮想化技術を用いて，マルチテナント向けクラウドコンピューティング基盤を実現する事例が増えている．コンテナ型仮想化システムでは，OS カーネルを共有しつつ，プロセス単位で OS リソースを多重化することで，各コンテナ環境を隔離する．しかし，隔離空間から抜けて，他コンテナに対しての攻撃が可能な OS リソースや機能が存在する．これらの利用は実行権限によって制限されているが，粒度が不十分である．従来，これらの OS リソースの制限をおこなうために，コンテナのセキュリティ機能を用いた制御，仮想マシンを用いた OS 多重化による隔離，ユーザランドにおけるネットワークスタックの再構築などの手法が提案されている．しかし，これらの手法は，設定が柔軟でなかったり，ネットワークのオーバヘッドを増大させる課題があった．本研究では，ハードウェア仮想化技術を用いつつ，OS を多重化せずに軽量かつ柔軟なネットワーク隔離手法を提案する．",
+  bibtex_show={true}
+}
+
+@article{1520853833389679360,
+  author={裕貴 中田 and 克弥 松原},
+  title="BLEビーコンを活用した地域課題解決型PBLの実践",
+  journal="JSiSE研究会研究報告",
+  publisher="教育システム情報学会",
+  year="2019",
+  month="03",
+  volume="33",
+  number="7",
+  pages="83-90",
+  URL="https://cir.nii.ac.jp/crid/1520853833389679360",
+  bibtex_show={true}
+}
+
+@inproceedings{weko_190294_1,
+  author	 = "亮介 松本 and 裕貴 中田 and 健太郎 栗林",
+  title	 = "HTTPリクエスト単位でインスタンスの再配置が可能な低コストで高速なスケジューリング手法",
+  year 	 = "2018",
+  institution	 = "GMOペパボ株式会社ペパボ研究所, GMOペパボ株式会社ペパボ研究所, GMOペパボ株式会社ペパボ研究所",
+  abstract = "スマートフォンや PC のモバイル化，SNS の爆発的普及に伴い，個人の Web サイトであってもコンテンツ次第でアクセスが集中する機会が増大してきている．我々は，サービス利用者に専門的な知識を要求せず，アクセス数や負荷に応じて反応的かつ高速にリソースをインスタンスに再割当てすることで，サービス利用者や事業者に手間を強いることなく突発的なアクセス集中に耐えうる FastContainer アーキテクチャを提案した．一方で，従来のホスティングサービスやクラウドサービスと同様に，インスタンスの収容サーバ障害時に，HTTP タイムアウトが生じない程度での可用性を担保しサービスを継続提供するためには，複数収容サーバに横断して，それぞれ複数インスタンスを立ち上げておく必要があった．そのため，利用者にとってはサービス利用コストの増加に繋がっていた．本研究では，HTTP リクエスト処理時において，単一のインスタンスであっても，収容サーバの状態に応じて自動的にインスタンスを別の収容サーバに再配置しサービスを継続させる，HTTP リクエスト単位での低コストで高速なインスタンススケジューリング手法を提案する．高速にインスタンスを再配置するために，Web サーバソフトウェア自体を拡張することなく，Web サーバプロセス起動時に実行されるシステムコールを監視して，起動完了する直前のシステムコール実行前の段階でプロセスイメージを作成しておくことにより，インスタンス再配置時には高速に Web サーバプロセスをそのイメージから起動させる．",
+  booktitle = "研究報告インターネットと運用技術（IOT）",
+  number	 = "1",
+  pages	 = "1-8",
+  month	 = "jun",
+  bibtex_show={true}
+}
+
+@inproceedings{dsw, 
+  author = {裕貴 中田 and 大悟 藤井 and 克弥 松原}, 
+  title = {実行時性能と両立するWebAssemblyライブマイグレーションの実現に向けたAhead-Of-Timeコンパイラの分析}, 
+  booktitle = {第21回ディペンダブルシステムワークショップ(DSW 2023)}, 
+  year = {2023}, 
+  address = {Ibaraki, Japan}, 
+  month = {Dec}, 
+  abbr2= {Poster},
+  website= {https://sites.google.com/site/jssstdsw/dsw2023}
+} 
+
+@inproceedings{bitvisor22, 
+  author = {裕貴 中田}, 
+  title = {BitVisorであやつるコンテナネットワーク}, 
+  booktitle = {BitVisor Summit 11}, 
+  year = {2022}, 
+  month = {Dec}, 
+  abbr2= {Oral},
+  website= {https://bitvisor.connpass.com/event/266391/},
+  slides = {https://speakerdeck.com/chikuwait/bitvisorsummit11}
+}
+
+@inproceedings{osc21, 
+  author = {裕貴 中田}, 
+  title = {SKBパケット選抜総選挙 〜 僕たちは誰について行けばいい？}, 
+  booktitle = {Open Source Conference 2021 Online Hokkaido}, 
+  year = {2021}, 
+  month = {Jun}, 
+  abbr2= {Oral},
+  website= {https://event.ospn.jp/osc2021-online-do},
+  slides = {https://speakerdeck.com/chikuwait/osc21do}
+}
+
+@inproceedings{infrastudy, 
+  author = {裕貴 中田}, 
+  title = {コンテナ型仮想化技術におけるネットワーク分離の研究開発事情}, 
+  booktitle = {Infra Study Meetup #8「インフラの研究開発」}, 
+  year = {2020}, 
+  month = {Nov}, 
+  abbr2= {Oral},
+  website= {https://forkwell.connpass.com/event/193256/},
+  slides = {https://speakerdeck.com/chikuwait/infra-study-lt}
+} 
+
+@inproceedings{osc20, 
+  author = {裕貴 中田}, 
+  title = {「おいしくてつよくなる」eBPFのはじめかた}, 
+  booktitle = {Open Source Conference 2020 Online/Hokkaido}, 
+  year = {2020}, 
+  month = {Jul}, 
+  abbr2= {Oral},
+  website= {https://event.ospn.jp/osc2020-online-do},
+  slides = {https://speakerdeck.com/chikuwait/learn-ebpf}
+}
+
+@inproceedings{bitvisor17, 
+  author = {裕貴 中田 and 克弥 松原}, 
+  title = {Implementation and Status of 'mruby in BitVisor'}, 
+  booktitle = {BitVisor Summit 6}, 
+  year = {2017}, 
+  month = {Dec}, 
+  abbr2= {Oral},
+  website= {https://www.bitvisor.org/summit6/},
+  slides = {https://speakerdeck.com/chikuwait/implementation-and-status-of-mruby-in-bitvisor}
+}
+
+@inproceedings{rubykaigi, 
+  author = {Nakata, Yuki}, 
+  title = {My Challenge of Embedding Mruby into a Bare-metal Hypervisor}, 
+  booktitle = {RubyKaigi 2017}, 
+  year = {2017}, 
+  month = {Sep}, 
+  abbr2= {Oral},
+  website= {https://rubykaigi.org/2017/},
+  slides = {https://speakerdeck.com/chikuwait/my-challenge-of-embedding-mruby-into-a-bare-metal-hypervisor}
+}
