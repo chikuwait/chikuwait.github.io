@@ -11,21 +11,136 @@ pretty_table: true
 ---
 
 ## 1. はじめに
-Wasmは、あらゆる言語で記述されたプログラムをWasmにコンパイルすることで、Wasmランタイムが動作する計算機であればどこでもプログラムが実行できるるポータブルな環境である。
+Wasmは、あらゆる言語で記述されたプログラムをWasmにコンパイルすることで、Wasmランタイムが動作する計算機であればどこでもプログラムが実行できるポータブルな環境である。
 JavaのWrite Once, Run Anywhereみたいなことをあらゆる言語で実現できる。
 WasmランタイムはWasmtimeやWasmer, WasmEdgeなどクラウドや組み込み、エッジ環境などに合わせた多様な実装がある。
-ある日ふと、WasmランタイムをWasmにコンパイルして別のWasmランタイムで実行できるんだろうか？と気になったので試してみた。
+
+ある日ふと、WasmランタイムをWasmにコンパイルして別のWasmランタイムで実行できるんだろうか？と気になった。ソースコードは改変せず、ビルドスクリプトの変更程度でなんとかなるか試してみた。
 
 ## 2. WasmランタイムをWasmビルドしてみる
 ### 2.1 [Wasmtime](https://github.com/bytecodealliance/wasmtime)
 WasmとWASIの実質的なリファレンス実装。
 
+```
+cargo build --target wasm32-wasi
+...
+error: failed to run custom build command for `cranelift-codegen v0.109.0 (/home/chikuwait/wasmtime/cranelift/codegen)`
+
+Caused by:
+  process didn't exit successfully: `/home/chikuwait/wasmtime/target/debug/build/cranelift-codegen-3ef08dfd75fb413b/build-script-build` (exit status: 101)
+  --- stderr
+  thread 'main' panicked at cranelift/codegen/build.rs:50:53:
+  error when identifying target: "no supported isa found for arch `wasm32`"
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+```
+Wasmtimeは、Rustで実装されており、WasmモジュールをJITコンパイルして実行する。
+JITコンパイルにはCraneliftを使用しており、中間コード(Cranelift IR)からマシンコードを生成するためのcranelift-codegen Crateのビルドに失敗する(WasmバイトコードからWasmバイトコードにコンパイルすることになるので、おかしなことになる)。
+
+参考: [cargo wasi run doesn't work - error with cranelift-codegen v0.96.3 #6540 - bytecodealliance/wasmtime](https://github.com/bytecodealliance/wasmtime/issues/6540)　
+
 ### 2.2 [Wasmi](https://github.com/wasmi-labs/wasmi)
 インタプリタ方式を採用したWasmランタイム。軽量で組み込み・IoT環境での使用を意識している。
 
+```
+cargo build --target wasm32-wasi
+
+...
+error: failed to run custom build command for `cranelift-codegen v0.105.4`
+
+Caused by:
+  process didn't exit successfully: `/home/chikuwait/wasmi/target/debug/build/cranelift-codegen-a4177e815286ec07/build-script-build` (exit status: 101)
+  --- stderr
+  thread 'main' panicked at /home/chikuwait/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cranelift-codegen-0.105.4/build.rs:48:53:
+  error when identifying target: "no supported isa found for arch `wasm32`"
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+warning: build failed, waiting for other jobs to finish...
+```
+WasmiはWasmtimeのcrateを使用して実装されているため、Wasmtimeと同様にビルドに失敗する。
+
 ### 2.3 [Wasmer](https://github.com/wasmerio/wasmer)
-ラップトップ(Win/Mac/)から、クラウド、エッジなどあらゆる環境でWasmを実行するためのランタイム。WASIを拡張してPOSIXの多様な機能に対応するオリジナルなインターフェースであるWASIXをサポートしている。
+ラップトップ(Win/Mac)から、クラウド、エッジなどあらゆる環境でWasmを実行するためのランタイム。WASIを拡張してPOSIXの多様な機能に対応するオリジナルなインターフェースであるWASIXをサポートしている。
+```
+cargo build --target wasm32-wasi --manifest-path lib/cli/Cargo.toml
+...
+error[E0433]: failed to resolve: use of undeclared crate or module `platform`
+  --> /home/chikuwait/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rustls-native-certs-0.6.3/src/lib.rs:58:42
+   |
+58 |     load_certs_from_env().unwrap_or_else(platform::load_native_certs)
+   |                                          ^^^^^^^^ use of undeclared crate or module `platform`
+
+```
+Wasmerは、TLSライブラリのRustlsを使用しているが、これは各プラットフォーム(Windows, macOS, Linux)ネイティブの証明書ストアを使用する。
+そのため、Wasmはサポートされていない。
+
+参考：[use of undeclared crate or module platform #92 - rustls/rustls-native-certs](https://github.com/rustls/rustls-native-certs/issues/92)
 
 ### 2.4 [WasmEdge](https://github.com/WasmEdge/WasmEdge)
+OCI(Open Container Initiative)に対応しているクラウドネイティブなWasmランタイム。
+クラウドネイティブ環境（サーバレスやマイクロサービス）やエッジ環境での実行を想定している。
 
+```
+cmake -DCMAKE_C_COMPILER="/home/chikuwait/wasi-sdk/bin/clang" -D CMAKE_CXX_COMPILER="/home/chikuwait/wasi-sdk/bin/clang++" .. -D CMAKE_CXX_COMPILER_TARGET=wasm32-wasi-threads -D CMAKE_C_COMPILER_TARGET=wasm32-wasi-threads
+
+...
+
+CMake Error at /usr/lib/llvm-14/cmake/AddLLVM.cmake:552 (add_library):
+  Target "wasmedgeLLVM" links to target "ZLIB::ZLIB" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+Call Stack (most recent call first):
+  lib/llvm/CMakeLists.txt:50 (llvm_add_library)
+
+
+CMake Error at cmake/Helper.cmake:184 (add_library):
+  Target "wasmedgeVM" links to target "ZLIB::ZLIB" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+Call Stack (most recent call first):
+  lib/vm/CMakeLists.txt:4 (wasmedge_add_library)
+
+
+CMake Error at cmake/Helper.cmake:184 (add_library):
+  Target "wasmedgeDriver" links to target "ZLIB::ZLIB" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+Call Stack (most recent call first):
+  lib/driver/CMakeLists.txt:16 (wasmedge_add_library)
+
+
+CMake Error at cmake/Helper.cmake:184 (add_library):
+  Target "wasmedge_shared" links to target "ZLIB::ZLIB" but the target was
+  not found.  Perhaps a find_package() call is missing for an IMPORTED
+  target, or an ALIAS target is missing?
+Call Stack (most recent call first):
+  lib/api/CMakeLists.txt:101 (wasmedge_add_library)
+
+
+CMake Error at cmake/Helper.cmake:184 (add_library):
+  Target "wasmedgeCAPI" links to target "ZLIB::ZLIB" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+Call Stack (most recent call first):
+  lib/api/CMakeLists.txt:75 (wasmedge_add_library)
+```
+
+WasmEdgeはzlibを使用するが、wasi-sdkのsysrootには存在しないのでビルドに失敗する。zlibをWasm向けにビルドしてあげればもしかしたらうまくいくかもしれない。
+
+参考: [No zlib in WASI #93819 - python/cpython](https://github.com/python/cpython/issues/93819)
 ### 2.5 [Wasm3](https://github.com/wasm3/wasm3)
+Wasm3は、高速で汎用的なWasmインタプリタ。Arduinoなどの組み込み・IoT環境で実行できることも謳っている。
+
+```
+cmake -DCMAKE_TOOLCHAIN_FILE="/home/chikuwait/wasm3/wasi-sdk-11.0/share/cmake/wasi-sdk.cmake" -DWASI_SDK_PREFIX="/home/chikuwait/wasm3/wasi-sdk-11.0" .. && make
+
+...
+[100%] Linking C executable wasm3.wasm
+clang version 10.0.0 (https://github.com/llvm/llvm-project d32170dbd5b0d54436537b6b75beaf44324e0c28)
+Target: wasm32-unknown-wasi
+Thread model: posix
+InstalledDir: /home/chikuwait/wasm3/wasi-sdk-11.0/bin
+ "/home/chikuwait/wasm3/wasi-sdk-11.0/bin/wasm-ld" -L/home/chikuwait/wasm3/wasi-sdk-11.0/share/wasi-sysroot/lib/wasm32-wasi /home/chikuwait/wasm3/wasi-sdk-11.0/share/wasi-sysroot/lib/wasm32-wasi/crt1.o --no-threads -z stack-size=8388608 CMakeFiles/wasm3.wasm.dir/platforms/app/main.c.obj source/libm3.a -lc /home/chikuwait/wasm3/wasi-sdk-11.0/lib/clang/10.0.0/lib/wasi/libclang_rt.builtins-wasm32.a -o wasm3.wasm
+[100%] Built target wasm3.wasm
+```
+
+Wasm3は、Readmeで```wasm3 can execute wasm3 (self-hosting)```と書かれているように、Wasmにコンパイルできることを公式にアピールしている。
