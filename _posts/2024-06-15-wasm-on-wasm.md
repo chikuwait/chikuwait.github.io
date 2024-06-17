@@ -144,3 +144,35 @@ InstalledDir: /home/chikuwait/wasm3/wasi-sdk-11.0/bin
 ```
 
 Wasm3は、Readmeで```wasm3 can execute wasm3 (self-hosting)```と書かれているように、Wasmにコンパイルできることを公式にアピールしている。
+
+# 3. Wasm3.wasm on Wasmランタイムのベンチマーク
+wasm3がwasmにビルドできたので、wasm3.wasm on Wasmランタイム環境で簡単なベンチマークを実行して性能を計測してみた。
+
+実験環境は、さくらの専用サーバPHY Fujitsu PRIMERGY RX2530 M5を使用した。
+- Intel Silver 4208 2.1GHz (8コア)
+- 32GB RAM
+- Linux 5.15
+
+ベンチマークには、[The Computer Language 24.06 Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/measurements/rust.html)にあるBinary-treeのRustコードを使用して、計算にかかる時間を測定した。N=7、14、21。
+
+
+| Binary-tree | 7 | 14 | 21 |
+| - | -: | -: | -: |
+| Wasm3 (Interp.)  | 0.025s | 2.023s | 6m10.097s |
+| Wasm3.wasm on Wasm3 | 0.349s | 1m5.761s | 200m51.784s |
+| Wasmtime (JIT) | 0.450s | 0.622s | 32.909s |
+| Wasm3.wasm on Wasmtime (JIT)  | 0.133s | 21.677s | 67m13.435s |
+| WasmEdge (Interp.)  | 0.191s | 40.264s | 125m45.874s |
+| WasmEdge (AOT) | 0.043s | 0.226s | 33.869s |
+| Wasm3.wasm on WasmEdge (Interp.)  | 4.099s | 11m55.544s | 2203m10.506s |
+| Wasm3.wasm on WasmEdge (AOT) | 0.219s | 55.496s | 173m24.420s |
+
+実験結果は以下のテーブルの通り。
+N=21のとき、入れ子しない場合と比べて、Wasm3.wasm on Wasm3は約32倍、Wasm3.wasm on Wasmtime (JIT) は約122倍、 Wasm3.wasm on WasmEdge (Interp.) は、約17倍、Wasm3.wasm on WasmEdge (AOT)は約307倍計算時間がかかった。
+
+想像の通りかなり遅い。
+WasmEdgeの結果を見ると、AOTコンパイルでインタプリタ程度には近づけることができるが、とはいえ遅い。
+不思議なのは、WasmtimeでN=7の時だけ、Wasm3.wasm on Wasmtimeのほうが速かった。
+これはJITコンパイルするホットスポットの違いなのだろうか？ちゃんとプロファイリングを取ってみないと分からない。
+JITコンパイルのパフォーマンスは難しい。
+ともかく、これだけ差があると、実用的なアプリケーションをランタイムonランタイムするのは中々難しいかもしれない（そんなユースケースはあるか？不明）。
