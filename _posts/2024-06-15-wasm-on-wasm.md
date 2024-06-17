@@ -4,7 +4,7 @@ title: WasmランタイムをWasm化してWasmランタイムで動かす(Wasm R
 date: 15-06-2024
 description:
 tags: WebAssembly
-categories: JA-post
+categories: Japanese
 giscus_comments: true
 related_posts: true
 pretty_table: true
