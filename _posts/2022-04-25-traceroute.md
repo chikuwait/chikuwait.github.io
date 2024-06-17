@@ -4,7 +4,7 @@ title: How Does Traceroute Get Network Route?
 date: 25-04-2022
 description:
 tags: networking
-categories:
+categories: English
 giscus_comments: true
 related_posts: true
 pretty_table: true

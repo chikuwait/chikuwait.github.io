@@ -4,7 +4,7 @@ title: WASI’s Capability-based Security Model
 date : 29-01-2023
 description:
 tags: WebAssembly
-categories:
+categories: English
 giscus_comments: true
 related_posts: true
 pretty_table: true
