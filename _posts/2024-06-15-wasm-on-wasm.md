@@ -146,6 +146,11 @@ InstalledDir: /home/chikuwait/wasm3/wasi-sdk-11.0/bin
 Wasm3は、Readmeで```wasm3 can execute wasm3 (self-hosting)```と書かれているように、Wasmにコンパイルできることを公式にアピールしている。
 そのため、特にハマるところはなく簡単にwasmにビルドできた。
 
+```
+wasm3 wasm3.wasm hello.wasm
+hello, world!
+```
+
 # 3. Wasm3.wasm on Wasmランタイムのベンチマーク
 wasm3がwasmにビルドできたので、wasm3.wasm on Wasmランタイム環境で簡単なベンチマークを実行して性能を計測してみた。
 
