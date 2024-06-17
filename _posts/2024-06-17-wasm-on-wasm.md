@@ -1,7 +1,7 @@
 ---
 layout: post
 title: WasmランタイムをWasm化してWasmランタイムで動かす(Wasm Runtime on Wasm Runtime)
-date: 15-06-2024
+date: 17-06-2024
 description:
 tags: WebAssembly
 categories: Japanese
