@@ -98,6 +98,13 @@
   ],
   "awards": [
     {
+      "title": "Best Poster Award",
+      "date": "2024",
+      "awarder": "The Ninth ACM/IEEE Symposium on Edge Computing (SEC)",
+      "url": "https://acm-ieee-sec.org/2024/program.php",
+      "summary": ""
+    },
+    {
       "title": "Future University Award (MSc)",
       "date": "2022",
       "awarder": "Future University Hakodate",
