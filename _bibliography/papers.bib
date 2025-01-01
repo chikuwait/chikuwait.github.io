@@ -12,19 +12,22 @@
   website= {https://acm-ieee-sec.org/2024/index.php},
   slides = {https://speakerdeck.com/chikuwait/poster-feasibility-of-runtime-neutral-wasm-instrumentation-for-edge-cloud-workload-handover},
   bibtex_show={true},
+  abstract={In edge computing, flexibly offloading or handing over computing workloads among devices, edge, and cloud, achieved by live migration, is crucial because of its hierarchical and heterogeneous structure. Implementing the process migration requires the runtime system to capture and restore the state of a running application at any arbitrary time. WebAssembly (Wasm) has attracted attention as a common platform for edge computing since it provides not only architecture neutrality and secure sandboxing as a lightweight VM but also performs at a native-level performance with AOT/JIT code optimization. Unfortunately, the different code optimizations in various Wasm runtimes make it harder to insert instrumentation code into application binary at runtime. We are currently developing a self-hosted Wasm runtime, i.e., a runtime that can be executed on another runtime as a Wasm application instrumentation mechanism while handling the runtime heterogeneity, including AOT/JIT code transformation. One of the major concerns in our proposal is the overhead caused by the intervention of another runtime for instrumentation. This study discusses the feasibility of a self-hosted runtime with instrumentation for obtaining the application's running state by comparing it with existing methods and evaluating it through preliminary experiments.},
   award={Best Poster Award,The Ninth ACM/IEEE Symposium on Edge Computing (SEC)},
   selected={true}
 }
 
 @inproceedings{weko_240811_1,
-  author = {進太郎 鈴木 and 裕貴 中田 and 克弥 松原},
+   author = {進太郎 鈴木 and 裕貴 中田 and 克弥 松原},
    title	 = "FreeBSDの透過的適用によるLinuxコンテナの隔離強化手法",
    booktitle	 = "コンピュータセキュリティシンポジウム2024論文集",
    year 	 = "2024",
    volume	 = "",
    number	 = "",
    pages	 = "476--481",
-   month	 = "oct"
+   month	 = "oct",
+   bibtex_show={true},
+   abstract ={クラウドにおける軽量なアプリケーション実行環境として普及しているコンテナ型仮想化は，コンテナ間およびコンテナとホスト間でOS カーネルを共有する．コンテナ仮想化における重大なセキュリティリスクのひとつは，OS カーネルの脆弱性を悪用することによる他コンテナやホスト環境への攻撃である．特に，コンテナシステムはLinux 環境を対象にした実装が多く，Linux カーネルの脆弱性がコンテナ隔離の脆弱性に直結する．本研究は，コンテナホストに異種OS を採用することで，低オーバヘッドでLinux コンテナの隔離を強化する手法の確立を目指している．本稿では，FreeBSD 独自のセキュリティ機能であるCapsicum をLinux アプリケーションへ透過的に適用することで，Linux コンテナにおける攻撃面の縮小化を実現する手法を提案する．},
 }
 
 @inproceedings{xsig,
