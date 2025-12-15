@@ -1,5 +1,26 @@
 ---
 ---
+@inproceedings{mid4cc,
+  author = {Nakata, Yuki and Matsubara, Katsuya},
+  title = {Self-Hosted WebAssembly Runtime for Runtime-Neutral Checkpoint/Restore in Edge-Cloud Continuum},
+  year = {2025},
+  month = {Dec},
+  isbn = {9798400723018},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3774898.3778040},
+  doi = {10.1145/3774898.3778040},
+  abstract = {Checkpoint/restore (C/R) in the Edge-Cloud Continuum, where edge servers and cloud servers are integrated to combine their respective computational characteristics, enables application live migration for load balancing and service continuity that adapts to user mobility. WebAssembly (Wasm) provides architecture neutrality, allowing bytecode execution across diverse platforms. Furthermore, by leveraging runtime implementations specialized for particular environments and performance optimizations such as Just-In-Time (JIT) and Ahead-Of-Time (AOT) compilation, Wasm bytecode can be executed efficiently by using the runtime best suited to each environment. However, the diversity of runtimes and performance optimizations results in heterogeneous representations of application execution states, making it difficult to apply C/R across multiple runtimes. To address this heterogeneity, we propose a C/R method that employs a self-hosted Wasm runtime compiled into Wasm itself. By checkpointing and restoring application execution states within the self-hosted Wasm runtime, the representation of execution states can be unified. In addition, to mitigate the overhead of duplicated runtime executions, we also investigate optimization techniques for Wasm runtimes designed to be self-hosted. Our evaluation results demonstrate that C/R with a self-hosted Wasm runtime can eliminate runtime differences and enable efficient live migration with a minimal execution state.},
+  booktitle = {Proceedings of the 3rd International Workshop on Middleware for the Computing Continuum},
+  pages = {19–24},
+  numpages = {6},
+  keywords = {Checkpoint/Restore, Live Migration, Self-Hosted WebAssembly Runtime},
+  location = {Vanderbilt University, Nashville, TN, USA},
+  series = {Mid4CC '25},
+  abbr= {Reviewed}
+
+}
+
 @inproceedings{wasmcon-na,
   author = {Nakata, Yuki},
   title = {What If the Runtime Was Portable Too? Self-Hosted Runtime Capabilities in Wasm},
