@@ -2,7 +2,7 @@
 layout: about
 title: About Me
 permalink: /
-subtitle: Ph.D. student at OS and System Software Lab., <a href='https://www.fun.ac.jp/en/outline-of-study'>Graduate School of Systems Information Science, Future University Hakodate</a>. <br> Researcher at Research and Development Group, <a href='https://research.sakura.ad.jp/'>Resarch Center</a>, <a href='https://www.sakura.ad.jp/corporate/en/'>SAKURA internet Inc</a>.
+subtitle: Ph.D. student at Future University Hakodate. <br> Researcher at SAKURA internet Inc</a>.
 
 profile:
   align: right
@@ -15,9 +15,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 <p>
-I'm a first-year Ph.D student at the Graduate School of Systems Information Science, Future University Hakodate. 
+I'm a Ph.D student at OS and System Software Lab., <a href='https://www.fun.ac.jp/en/outline-of-study'>Graduate School of Systems Information Science, Future University Hakodate</a>.
 My advisors are <a href='https://www.fun.ac.jp/en/faculty/inamura-hiroshi'>Prof. Hiroshi Inamura</a> and <a href='https://www.fun.ac.jp/en/faculty/matsubara-katsuya'>Prof. Katsuya Matsubara</a>.
-In addition, I'm working full-time on research and development at Research Center, SAKURA internet Inc.
+In addition, I'm working full-time on research and development at <a href='https://research.sakura.ad.jp/'>Resarch Center</a>, <a href='https://www.sakura.ad.jp/corporate/en/'>SAKURA internet Inc</a>.
 Our company provides cloud computing, GPU-based high-performance computing environments, and data centers for the Japanese government, corporations, and private customers.
 </p>
 <p>

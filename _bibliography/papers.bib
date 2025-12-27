@@ -1,5 +1,38 @@
 ---
 ---
+@inproceedings{mid4cc,
+  author = {Nakata, Yuki and Matsubara, Katsuya},
+  title = {Self-Hosted WebAssembly Runtime for Runtime-Neutral Checkpoint/Restore in Edge-Cloud Continuum},
+  year = {2025},
+  month = {Dec},
+  isbn = {9798400723018},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3774898.3778040},
+  doi = {10.1145/3774898.3778040},
+  abstract = {Checkpoint/restore (C/R) in the Edge-Cloud Continuum, where edge servers and cloud servers are integrated to combine their respective computational characteristics, enables application live migration for load balancing and service continuity that adapts to user mobility. WebAssembly (Wasm) provides architecture neutrality, allowing bytecode execution across diverse platforms. Furthermore, by leveraging runtime implementations specialized for particular environments and performance optimizations such as Just-In-Time (JIT) and Ahead-Of-Time (AOT) compilation, Wasm bytecode can be executed efficiently by using the runtime best suited to each environment. However, the diversity of runtimes and performance optimizations results in heterogeneous representations of application execution states, making it difficult to apply C/R across multiple runtimes. To address this heterogeneity, we propose a C/R method that employs a self-hosted Wasm runtime compiled into Wasm itself. By checkpointing and restoring application execution states within the self-hosted Wasm runtime, the representation of execution states can be unified. In addition, to mitigate the overhead of duplicated runtime executions, we also investigate optimization techniques for Wasm runtimes designed to be self-hosted. Our evaluation results demonstrate that C/R with a self-hosted Wasm runtime can eliminate runtime differences and enable efficient live migration with a minimal execution state.},
+  booktitle = {Proceedings of the 3rd International Workshop on Middleware for the Computing Continuum},
+  pages = {19–24},
+  numpages = {6},
+  keywords = {Checkpoint/Restore, Live Migration, Self-Hosted WebAssembly Runtime},
+  location = {Vanderbilt University, Nashville, TN, USA},
+  series = {Mid4CC '25},
+  abbr= {Reviewed}
+
+}
+
+@inproceedings{wasmcon-na,
+  author = {Nakata, Yuki},
+  title = {What If the Runtime Was Portable Too? Self-Hosted Runtime Capabilities in Wasm},
+  booktitle = {WasmCon NA (KubeCon + CloudNativeCon NA 2025 CNCF Co-located Event)},
+  year = {2025},
+  month = {Nov},
+  abbr2= {Oral},
+  abbr= {Reviewed},
+  website= {https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/co-located-events/wasmcon/},
+  slides = {https://static.sched.com/hosted_files/colocatedeventsna2025/fa/self-hosted_runtime_wasmcon.pdf},
+}
+
 @inproceedings{japan_community_day_2025,
   author = {Nakata, Yuki and Fujii, Daigo},
   title = {Beyond Portability: Live Migration for Evolving WebAssembly Workloads},
@@ -44,7 +77,7 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   doi = {10.1109/SEC62691.2024.00068},
   url = {https://doi.ieeecomputersociety.org/10.1109/SEC62691.2024.00068},
   publisher = {IEEE Computer Society},
-  abbr= {Peer-reviewed},
+  abbr= {Reviewed},
   abbr2= {Poster},
   website= {https://acm-ieee-sec.org/2024/index.php},
   slides = {https://speakerdeck.com/chikuwait/poster-feasibility-of-runtime-neutral-wasm-instrumentation-for-edge-cloud-workload-handover},
@@ -53,6 +86,16 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   award={Best Poster Award,The Ninth ACM/IEEE Symposium on Edge Computing (SEC)},
   selected={true}
 }
+
+@inproceedings{comsys2024,
+  author	 = "優月 齊藤 and 大悟 藤井 and 克弥 松原 and 裕貴 中田",
+  title = {エッジコンピューティングにおけるWebAssemblyマイグレーションを活用した高可用性機能の検討},
+  year = {2024},
+  month	 = "Dec",
+  booktitle = {情報処理学会第36回コンピュータシステム・シンポジウム},
+  abbr2= {Poster},
+}
+
 
 @inproceedings{weko_240811_1,
    author = {進太郎 鈴木 and 裕貴 中田 and 克弥 松原},
@@ -67,16 +110,17 @@ slides = {https://speakerdeck.com/chikuwait/os167},
    abstract ={クラウドにおける軽量なアプリケーション実行環境として普及しているコンテナ型仮想化は，コンテナ間およびコンテナとホスト間でOS カーネルを共有する．コンテナ仮想化における重大なセキュリティリスクのひとつは，OS カーネルの脆弱性を悪用することによる他コンテナやホスト環境への攻撃である．特に，コンテナシステムはLinux 環境を対象にした実装が多く，Linux カーネルの脆弱性がコンテナ隔離の脆弱性に直結する．本研究は，コンテナホストに異種OS を採用することで，低オーバヘッドでLinux コンテナの隔離を強化する手法の確立を目指している．本稿では，FreeBSD 独自のセキュリティ機能であるCapsicum をLinux アプリケーションへ透過的に適用することで，Linux コンテナにおける攻撃面の縮小化を実現する手法を提案する．},
 }
 
-@inproceedings{xsig,
-  author = {進太郎 鈴木 and 裕貴 中田 and 克弥 松原},
-  title = {異種OS機能連携によるセキュアコンテナ実現に向けた予備評価},
-  year = {2023},
-  url = {https://xsig.ipsj.or.jp/2023/},
-  month	 = "Aug",
-  booktitle = {xSIG (cross-disciplinary workshop on computing Systems, Infrastructures, and programminG) 2023},
-  publisher = {情報処理学会},
-  website= {https://jssst2024.wordpress.com/},
-  bibtex_show={true},
+
+@inproceedings{apsys2024,
+  author = {Fujii, Daigo and Matsubara, Katsuya and Nakata, Yuki},
+  title = {A Checkpoint/Restore Mechanism with Interoperability Among Distinctive WebAssembly Interpreters},
+  year = {2024},
+  month	 = "Sep",
+  booktitle = {15th ACM SIGOPS Asia-Pacific Workshop on Systems(APSys 2024)},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  location = {<city>Kyoto</city>, <country>Japan</country>},
+  abbr= {Reviewed},
   abbr2= {Poster},
 }
 
@@ -92,23 +136,11 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   bibtex_show={true},
 }
 
-@inproceedings{apsys2024,
-  author = {Fujii, Daigo and Matsubara, Katsuya and Nakata, Yuki},
-  title = {A Checkpoint/Restore Mechanism with Interoperability Among Distinctive WebAssembly Interpreters},
-  year = {2024},
-  month	 = "Sep",
-  booktitle = {15th ACM SIGOPS Asia-Pacific Workshop on Systems(APSys 2024)},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  location = {<city>Kyoto</city>, <country>Japan</country>},
-  abbr= {Peer-reviewed},
-  abbr2= {Poster},
-}
-
 @inproceedings{10.1145/3642968.3654816,
   author = {Fujii, Daigo and Matsubara, Katsuya and Nakata, Yuki},
   title = {Stateful VM Migration Among Heterogeneous WebAssembly Runtimes for Efficient Edge-cloud Collaborations},
   year = {2024},
+  month	 = "Apr",
   isbn = {9798400705397},
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
@@ -121,8 +153,45 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   keywords = {Application checkpointing, Wasm, live migration},
   location = {<city>Athens</city>, <country>Greece</country>},
   bibtex_show={true},
-  abbr={Peer-reviewed}
+  abbr= {Reviewed},
 }
+
+@article{published_papers/46105696,
+  title = {Penetration Testing for Linux Jail as Exploit-resistant Linux Container},
+  author = {Suzuki, Shintaro and Nakata, Yuki and Matsubara, Katsuya},
+  journal = {AsiaBSDCon 2024 Proceedings},
+  month = {3},
+  pages = {51--56},
+  year = {2024},
+  abstract = {Container virtualization technologies such as Docker [1] are now widely used as lightweight application execution environments in cloud services. They are based on OS pro- cesses, which are lightweight compared with traditional VMs, resulting in faster startup and a lower memory footprint. Many cloud services [2], [3] take advantage of the characteristics of containers for rapid scale-out, scale-in, and more efficient resource usage. We aim to achieve a container sandbox with Container Transplantation in which Linux containers run compatibly in another OS and apply another OS-specific security mechanism to resolve the trade-off between robust container isolation and container characteristics and application performance. Since many cloud services utilize Linux as the environment for hosting containers, vulnerabilities in the Linux kernel and its functions are directly linked to container vulnerabilities. Unfortunately, attacks that exploit those vulnerabilities often have fatal adverse effects that make it impossible for cloud services to run correctly, such as unauthorized access to hosts and other containers through privilege escalation and the theft of sensitive information. We have proposed that executing Linux containers in another OS can avoid these various attacks that exploit vulnerabilities related to the Linux kernel and its functionality. Moreover, it is possible to apply unique security models and functions implemented in various OSes to Linux containers to achieve more finely-grained access control and isolation between containers resilient to attacks targeting specific OSes. This paper investigates the possibility of resisting attacks using Linux kernel vulnerabilities through the Linux jails. Among the vulnerabilities in Linux Kernel 4.4, emulated by Linux jails on FreeBSD13.2, we have chosen those that the Linuxulator can emulate. Then, we categorized the Linux kernel vulnerabilities that the secure container must be able to avoid, tried the attacks on both Linux and the Linuxulator, and summarized the success or failure of the attacks. Linux- ulator, and summarized the success or failure of the attacks. Our experimental results illustrate that the Linuxulator can efficiently repel exploits against Linux kernel vulnerabilities.},
+  bibtex_show={true},
+  abbr= {Reviewed}
+}
+
+@inproceedings{dsw, 
+  author = {裕貴 中田 and 大悟 藤井 and 克弥 松原}, 
+  title = {実行時性能と両立するWebAssemblyライブマイグレーションの実現に向けたAhead-Of-Timeコンパイラの分析}, 
+  booktitle = {第21回ディペンダブルシステムワークショップ(DSW 2023)}, 
+  year = {2023}, 
+  address = {Ibaraki, Japan}, 
+  month = {Dec}, 
+  abbr2= {Poster},
+  website= {https://sites.google.com/site/jssstdsw/dsw2023}
+} 
+
+@inproceedings{weko_231383_1,
+  author	 = "大悟 藤井 and 克弥 松原 and 裕貴 中田",
+  title	 = "ランタイム中立なWebAssemblyライブマイグレーションの実現可能性検討",
+  booktitle	 = "コンピュータシステム・シンポジウム論文集",
+  year 	 = "2023",
+  volume	 = "2023",
+  number	 = "",
+  pages	 = "14--20",
+  month	 = "nov",
+  abstract = "OSやハードウェアアーキテクチャに対する中立性や安全性などの観点から，クラウドコンピューティング実行基盤としてのWebAssemblyが注目されている．WebAssemblyの実行環境は，軽量さが特徴のWebAssembly Micro Runtime (WAMR)，クラウドネイティブ向けの機能が充実しているWasmEdgeなど，様々なランタイムが存在し，それらランタイムごとにその特性が異なる．特に，エッジデバイス，エッジクラウド，データセンタクラウドが連携するエッジコンピューティングにおいては，各システム基盤の用途や計算資源制約やに応じて最適なWebAssemblyランタイムが異なるため，求められる応答性能や負荷状況に応じて，複数のシステム基盤を使い分けながら計算処理を継続実行できるライブマイグレーション技術が有用である．本研究では，異なるWebAssemblyランタイム間で，実行中のアプリケーションをマイグレーションできる機能の実現可能性を検討する．WasmEdgeとWAMRの2種類のWebAssemblyランタイムを対象として，WebAssembly仕様と各ランタイム実装の分析から，アプリケーションの実行状態を再現するのに必要な情報を特定し，実行状態を保存・復元する機能をそれぞれのランタイムへプロトタイプ実装した．さらに，実験により，それぞれのランタイムのアプリケーション実行性能を評価し，マイグレーション機能の実装にともなうオーバヘッドを確認した．",
+  bibtex_show={true}
+}
+
 
 @inproceedings{10.1145/3609510.3609820,
   author = {Nakata, Yuki and Suzuki, Shintaro and Matsubara, Katsuya},
@@ -141,7 +210,21 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   location = {Seoul, Republic of Korea},
   bibtex_show={true},
   selected={true},
-  abbr={Peer-reviewed}
+  abbr= {Reviewed},
+  month="Aug"
+}
+
+@inproceedings{xsig,
+  author = {進太郎 鈴木 and 裕貴 中田 and 克弥 松原},
+  title = {異種OS機能連携によるセキュアコンテナ実現に向けた予備評価},
+  year = {2023},
+  url = {https://xsig.ipsj.or.jp/2023/},
+  month	 = "Aug",
+  booktitle = {xSIG (cross-disciplinary workshop on computing Systems, Infrastructures, and programminG) 2023},
+  publisher = {情報処理学会},
+  website= {https://jssst2024.wordpress.com/},
+  bibtex_show={true},
+  abbr2= {Poster},
 }
 
 @inproceedings{10.1145/3468737.3494092,
@@ -161,20 +244,9 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   location = {Leicester, United Kingdom},
   bibtex_show={true},
   selected={true},
-  abbr={Peer-reviewed}
+  abbr= {Reviewed}
 }
 
-@article{published_papers/46105696,
-  title = {Penetration Testing for Linux Jail as Exploit-resistant Linux Container},
-  author = {Suzuki, Shintaro and Nakata, Yuki and Matsubara, Katsuya},
-  journal = {AsiaBSDCon 2024 Proceedings},
-  month = {3},
-  pages = {51--56},
-  year = {2024},
-  abstract = {Container virtualization technologies such as Docker [1] are now widely used as lightweight application execution environments in cloud services. They are based on OS pro- cesses, which are lightweight compared with traditional VMs, resulting in faster startup and a lower memory footprint. Many cloud services [2], [3] take advantage of the characteristics of containers for rapid scale-out, scale-in, and more efficient resource usage. We aim to achieve a container sandbox with Container Transplantation in which Linux containers run compatibly in another OS and apply another OS-specific security mechanism to resolve the trade-off between robust container isolation and container characteristics and application performance. Since many cloud services utilize Linux as the environment for hosting containers, vulnerabilities in the Linux kernel and its functions are directly linked to container vulnerabilities. Unfortunately, attacks that exploit those vulnerabilities often have fatal adverse effects that make it impossible for cloud services to run correctly, such as unauthorized access to hosts and other containers through privilege escalation and the theft of sensitive information. We have proposed that executing Linux containers in another OS can avoid these various attacks that exploit vulnerabilities related to the Linux kernel and its functionality. Moreover, it is possible to apply unique security models and functions implemented in various OSes to Linux containers to achieve more finely-grained access control and isolation between containers resilient to attacks targeting specific OSes. This paper investigates the possibility of resisting attacks using Linux kernel vulnerabilities through the Linux jails. Among the vulnerabilities in Linux Kernel 4.4, emulated by Linux jails on FreeBSD13.2, we have chosen those that the Linuxulator can emulate. Then, we categorized the Linux kernel vulnerabilities that the secure container must be able to avoid, tried the attacks on both Linux and the Linuxulator, and summarized the success or failure of the attacks. Linux- ulator, and summarized the success or failure of the attacks. Our experimental results illustrate that the Linuxulator can efficiently repel exploits against Linux kernel vulnerabilities.},
-  bibtex_show={true},
-  abbr={Peer-reviewed}
-}
 
 @article{中田 裕貴2020370210,
   title={BLEビーコンを活用した地域課題解決型PBLの実践},
@@ -186,7 +258,7 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   year={2020},
   doi={10.14926/jsise.37.155},
   bibtex_show={true},
-  abbr={Peer-reviewed}
+  abbr= {Reviewed}
 }
 
 @inproceedings{weko_233036_1,
@@ -201,18 +273,7 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   bibtex_show={true}
 }
 
-@inproceedings{weko_231383_1,
-  author	 = "大悟 藤井 and 克弥 松原 and 裕貴 中田",
-  title	 = "ランタイム中立なWebAssemblyライブマイグレーションの実現可能性検討",
-  booktitle	 = "コンピュータシステム・シンポジウム論文集",
-  year 	 = "2023",
-  volume	 = "2023",
-  number	 = "",
-  pages	 = "14--20",
-  month	 = "nov",
-  abstract = "OSやハードウェアアーキテクチャに対する中立性や安全性などの観点から，クラウドコンピューティング実行基盤としてのWebAssemblyが注目されている．WebAssemblyの実行環境は，軽量さが特徴のWebAssembly Micro Runtime (WAMR)，クラウドネイティブ向けの機能が充実しているWasmEdgeなど，様々なランタイムが存在し，それらランタイムごとにその特性が異なる．特に，エッジデバイス，エッジクラウド，データセンタクラウドが連携するエッジコンピューティングにおいては，各システム基盤の用途や計算資源制約やに応じて最適なWebAssemblyランタイムが異なるため，求められる応答性能や負荷状況に応じて，複数のシステム基盤を使い分けながら計算処理を継続実行できるライブマイグレーション技術が有用である．本研究では，異なるWebAssemblyランタイム間で，実行中のアプリケーションをマイグレーションできる機能の実現可能性を検討する．WasmEdgeとWAMRの2種類のWebAssemblyランタイムを対象として，WebAssembly仕様と各ランタイム実装の分析から，アプリケーションの実行状態を再現するのに必要な情報を特定し，実行状態を保存・復元する機能をそれぞれのランタイムへプロトタイプ実装した．さらに，実験により，それぞれのランタイムのアプリケーション実行性能を評価し，マイグレーション機能の実装にともなうオーバヘッドを確認した．",
-  bibtex_show={true}
-}
+
 
 @inproceedings{weko_222709_1,
   author	 = "進太郎 鈴木 and 裕貴 中田 and 克弥 松原",
@@ -262,7 +323,7 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   number	 = "",
   pages	 = "119--120",
   month	 = "nov",
-  abbr= {Peer-reviewed},
+  abbr= {Reviewed},
   abbr2= {Poster},
   award={Best Poster Award, the 13th IPSJ Internet and Operation Technology Symposium (IOTS2020)}
 }
@@ -307,16 +368,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   bibtex_show={true}
 }
 
-@inproceedings{dsw, 
-  author = {裕貴 中田 and 大悟 藤井 and 克弥 松原}, 
-  title = {実行時性能と両立するWebAssemblyライブマイグレーションの実現に向けたAhead-Of-Timeコンパイラの分析}, 
-  booktitle = {第21回ディペンダブルシステムワークショップ(DSW 2023)}, 
-  year = {2023}, 
-  address = {Ibaraki, Japan}, 
-  month = {Dec}, 
-  abbr2= {Poster},
-  website= {https://sites.google.com/site/jssstdsw/dsw2023}
-} 
 
 @inproceedings{bitvisor22, 
   author = {裕貴 中田}, 
