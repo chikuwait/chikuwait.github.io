@@ -17,8 +17,8 @@
   keywords = {Checkpoint/Restore, Live Migration, Self-Hosted WebAssembly Runtime},
   location = {Vanderbilt University, Nashville, TN, USA},
   series = {Mid4CC '25},
-  abbr= {Reviewed}
-
+  abbr= {Reviewed},
+  selected={true},
 }
 
 @inproceedings{wasmcon-na,
@@ -44,15 +44,16 @@
   slides = {https://speakerdeck.com/chikuwait/beyond-portability-live-migration-for-evolving-webassembly-workloads},
 }
 
-@techreport{os167,
-author = {裕貴 中田 and 克弥 松原},
-issue = {9},
-month = {May},
-title = {JIT/AOTコード最適化と両立するWebAssemblyライブマイグレーション実現手法の検討},
-year = {2025},
-bibtex_show={true},
-website= {https://sigos.ipsj.or.jp/event/sigos2025-05/},
-slides = {https://speakerdeck.com/chikuwait/os167},
+@inproceedings{os167,
+  author = {裕貴 中田 and 克弥 松原},
+  issue = {9},
+  month = {May},
+  title = {JIT/AOTコード最適化と両立するWebAssemblyライブマイグレーション実現手法の検討},
+  booktitle = {研究報告システムソフトウェアとオペレーティング・システム（OS）},
+  year = {2025},
+  slides = {https://speakerdeck.com/chikuwait/os167},
+  abstract = {エッジコンピューティングでは，デバイス・エッジサーバ・クラウドサーバといった特性の異なる処理ノードを使い分けることが重要である．柔軟な処理ノード選択を実現する技術としてライブマイグレーション技術があるが，各ノードはアーキテクチャが異なるため，特に実行状態をともなうライブマイグレーションの実現が難しい．WebAssembly（Wasm）は，アーキテクチャ中立性による多様なプラットフォーム上でのバイトコード実行を可能にする．さらに，特定の処理ノードに特化したランタイム実装や，JIT/AOTコード最適化による実行性能を最適化できるランタイムも存在するため，エッジコンピューティングにおける共通アプリケーション実行基盤として注目されている．しかしながら，多様なランタイムと性能最適化は，各ランタイムが保持するアプリケーション実行状態が異なる形式・内容となるため，複数ランタイム間でのライブマイグレーションが困難になる．本研究では，多様なランタイムと性能最適化による実行状態表現の異種性に対処するために，セルフホスト型Wasmランタイムを用いたライブマイグレーション手法を提案する．任意のランタイム上で動作可能なセルフホストランタイムがアプリケーション実行状態を保存・復元することで，アプリケーション実行状態表現を統一化し，異なるランタイム間でのライブマイグレーションを実現できる．本稿では，ランタイムと実行最適化方式に中立なライブマイグレーション実現のためのセルフホストランタイムのプロトタイプ実装とそのアプリケーション実行性能の評価結果について報告する．},
+  website= {https://ipsj.ixsq.nii.ac.jp/records/2002120}
 }
 
 @inproceedings{techtalk2025,
@@ -81,7 +82,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   abbr2= {Poster},
   website= {https://acm-ieee-sec.org/2024/index.php},
   slides = {https://speakerdeck.com/chikuwait/poster-feasibility-of-runtime-neutral-wasm-instrumentation-for-edge-cloud-workload-handover},
-  bibtex_show={true},
   abstract={In edge computing, flexibly offloading or handing over computing workloads among devices, edge, and cloud, achieved by live migration, is crucial because of its hierarchical and heterogeneous structure. Implementing the process migration requires the runtime system to capture and restore the state of a running application at any arbitrary time. WebAssembly (Wasm) has attracted attention as a common platform for edge computing since it provides not only architecture neutrality and secure sandboxing as a lightweight VM but also performs at a native-level performance with AOT/JIT code optimization. Unfortunately, the different code optimizations in various Wasm runtimes make it harder to insert instrumentation code into application binary at runtime. We are currently developing a self-hosted Wasm runtime, i.e., a runtime that can be executed on another runtime as a Wasm application instrumentation mechanism while handling the runtime heterogeneity, including AOT/JIT code transformation. One of the major concerns in our proposal is the overhead caused by the intervention of another runtime for instrumentation. This study discusses the feasibility of a self-hosted runtime with instrumentation for obtaining the application's running state by comparing it with existing methods and evaluating it through preliminary experiments.},
   award={Best Poster Award,The Ninth ACM/IEEE Symposium on Edge Computing (SEC)},
   selected={true}
@@ -94,6 +94,7 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   month	 = "Dec",
   booktitle = {情報処理学会第36回コンピュータシステム・シンポジウム},
   abbr2= {Poster},
+  website={https://sigos.ipsj.or.jp/event/comsys2024/posters/ComSys_2024_poster_20.pdf}
 }
 
 
@@ -106,8 +107,8 @@ slides = {https://speakerdeck.com/chikuwait/os167},
    number	 = "",
    pages	 = "476--481",
    month	 = "oct",
-   bibtex_show={true},
    abstract ={クラウドにおける軽量なアプリケーション実行環境として普及しているコンテナ型仮想化は，コンテナ間およびコンテナとホスト間でOS カーネルを共有する．コンテナ仮想化における重大なセキュリティリスクのひとつは，OS カーネルの脆弱性を悪用することによる他コンテナやホスト環境への攻撃である．特に，コンテナシステムはLinux 環境を対象にした実装が多く，Linux カーネルの脆弱性がコンテナ隔離の脆弱性に直結する．本研究は，コンテナホストに異種OS を採用することで，低オーバヘッドでLinux コンテナの隔離を強化する手法の確立を目指している．本稿では，FreeBSD 独自のセキュリティ機能であるCapsicum をLinux アプリケーションへ透過的に適用することで，Linux コンテナにおける攻撃面の縮小化を実現する手法を提案する．},
+  website={https://ipsj.ixsq.nii.ac.jp/records/240811},
 }
 
 
@@ -122,6 +123,7 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   location = {<city>Kyoto</city>, <country>Japan</country>},
   abbr= {Reviewed},
   abbr2= {Poster},
+  website= {https://apsys2024.github.io/posters/apsys24posters-final73.pdf},
 }
 
 @inproceedings{jssst,
@@ -133,7 +135,8 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   booktitle = {日本ソフトウェア科学会第41回大会},
   publisher = {日本ソフトウェア科学会},
   website= {https://jssst2024.wordpress.com/},
-  bibtex_show={true},
+  abstract = {クラウドコンピューティング基盤に欠かせない機能のひとつであるVMマイグレーションの実現には，VMやVM内で稼働するアプリケーションの実行状態を任意のタイミングで抽出・復元する技術が必要不可欠である．本研究では，エッジ・クラウドコンピューティング向けシステム基盤としての活用が注目されているWebAssemblyを対象として，VMマイグレーションに最適なバイナリインストルメンテーション機能の実現手法として，セルフホスト型ランタイムに着目した．多種多様なランタイムが現存し，ネイティブコンパイル等の最適化技術が適用されることも多いWebAssemblyアプリケーションの実行状態抽出には，ランタイム中立性と実行時性能を両立できるバイナリインストルメンテーションが求められる．本稿では，WebAssemblyアプリケーションの実行状態を取得するためのインストルメンテーション機能を備えたセルフホスト型ランタイムについて，既存インストルメンテーション手法との比較や予備実験による評価により，その実現可能性を検討する．},
+
 }
 
 @inproceedings{10.1145/3642968.3654816,
@@ -152,7 +155,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   numpages = {6},
   keywords = {Application checkpointing, Wasm, live migration},
   location = {<city>Athens</city>, <country>Greece</country>},
-  bibtex_show={true},
   abbr= {Reviewed},
 }
 
@@ -164,8 +166,8 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   pages = {51--56},
   year = {2024},
   abstract = {Container virtualization technologies such as Docker [1] are now widely used as lightweight application execution environments in cloud services. They are based on OS pro- cesses, which are lightweight compared with traditional VMs, resulting in faster startup and a lower memory footprint. Many cloud services [2], [3] take advantage of the characteristics of containers for rapid scale-out, scale-in, and more efficient resource usage. We aim to achieve a container sandbox with Container Transplantation in which Linux containers run compatibly in another OS and apply another OS-specific security mechanism to resolve the trade-off between robust container isolation and container characteristics and application performance. Since many cloud services utilize Linux as the environment for hosting containers, vulnerabilities in the Linux kernel and its functions are directly linked to container vulnerabilities. Unfortunately, attacks that exploit those vulnerabilities often have fatal adverse effects that make it impossible for cloud services to run correctly, such as unauthorized access to hosts and other containers through privilege escalation and the theft of sensitive information. We have proposed that executing Linux containers in another OS can avoid these various attacks that exploit vulnerabilities related to the Linux kernel and its functionality. Moreover, it is possible to apply unique security models and functions implemented in various OSes to Linux containers to achieve more finely-grained access control and isolation between containers resilient to attacks targeting specific OSes. This paper investigates the possibility of resisting attacks using Linux kernel vulnerabilities through the Linux jails. Among the vulnerabilities in Linux Kernel 4.4, emulated by Linux jails on FreeBSD13.2, we have chosen those that the Linuxulator can emulate. Then, we categorized the Linux kernel vulnerabilities that the secure container must be able to avoid, tried the attacks on both Linux and the Linuxulator, and summarized the success or failure of the attacks. Linux- ulator, and summarized the success or failure of the attacks. Our experimental results illustrate that the Linuxulator can efficiently repel exploits against Linux kernel vulnerabilities.},
-  bibtex_show={true},
-  abbr= {Reviewed}
+  abbr= {Reviewed},
+  website= {https://2024.asiabsdcon.org/program/_p04b/paper.pdf},
 }
 
 @inproceedings{dsw, 
@@ -189,7 +191,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   pages	 = "14--20",
   month	 = "nov",
   abstract = "OSやハードウェアアーキテクチャに対する中立性や安全性などの観点から，クラウドコンピューティング実行基盤としてのWebAssemblyが注目されている．WebAssemblyの実行環境は，軽量さが特徴のWebAssembly Micro Runtime (WAMR)，クラウドネイティブ向けの機能が充実しているWasmEdgeなど，様々なランタイムが存在し，それらランタイムごとにその特性が異なる．特に，エッジデバイス，エッジクラウド，データセンタクラウドが連携するエッジコンピューティングにおいては，各システム基盤の用途や計算資源制約やに応じて最適なWebAssemblyランタイムが異なるため，求められる応答性能や負荷状況に応じて，複数のシステム基盤を使い分けながら計算処理を継続実行できるライブマイグレーション技術が有用である．本研究では，異なるWebAssemblyランタイム間で，実行中のアプリケーションをマイグレーションできる機能の実現可能性を検討する．WasmEdgeとWAMRの2種類のWebAssemblyランタイムを対象として，WebAssembly仕様と各ランタイム実装の分析から，アプリケーションの実行状態を再現するのに必要な情報を特定し，実行状態を保存・復元する機能をそれぞれのランタイムへプロトタイプ実装した．さらに，実験により，それぞれのランタイムのアプリケーション実行性能を評価し，マイグレーション機能の実装にともなうオーバヘッドを確認した．",
-  bibtex_show={true}
 }
 
 
@@ -208,7 +209,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   numpages = {7},
   keywords = {capability-based security and system call emulation, container security},
   location = {Seoul, Republic of Korea},
-  bibtex_show={true},
   selected={true},
   abbr= {Reviewed},
   month="Aug"
@@ -218,12 +218,11 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   author = {進太郎 鈴木 and 裕貴 中田 and 克弥 松原},
   title = {異種OS機能連携によるセキュアコンテナ実現に向けた予備評価},
   year = {2023},
-  url = {https://xsig.ipsj.or.jp/2023/},
+  website = {https://xsig.ipsj.or.jp/2023/},
   month	 = "Aug",
   booktitle = {xSIG (cross-disciplinary workshop on computing Systems, Infrastructures, and programminG) 2023},
   publisher = {情報処理学会},
   website= {https://jssst2024.wordpress.com/},
-  bibtex_show={true},
   abbr2= {Poster},
 }
 
@@ -242,7 +241,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   numpages = {10},
   keywords = {traffic control, security, packet filtering and routing},
   location = {Leicester, United Kingdom},
-  bibtex_show={true},
   selected={true},
   abbr= {Reviewed}
 }
@@ -257,7 +255,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   pages={155-160},
   year={2020},
   doi={10.14926/jsise.37.155},
-  bibtex_show={true},
   abbr= {Reviewed}
 }
 
@@ -270,7 +267,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   number	 = "16",
   month	 = "mar",
   abstract={クラウドコンピューティング基盤における軽量なアプリケーション実行環境として，コンテナ型仮想化が広く活用されている．コンテナをマルチテナント・クラウドで利用する場合，OS カーネル共有に起因する脆弱性回避のために，追加で堅牢なコンテナ間隔離が必要となる．著者らは，FreeBSD 上で Linux コンテナ実行環境を実現することで，追加の隔離にかかるオーバヘッドを最小化しつつ，OS カーネルの脆弱性に対する攻撃の回避を行う手法を提案している．本提案手法では，コンテナ内のアプリケーションやユーザから異種 OS 上で動作していることを隠蔽できることが，攻撃回避成功の要となっている．しかし，本手法が異種 OS として採用する FreeBSD では，コンテナのネットワーク分離を実現できる vnet 機能が，Linux コンテナでネットワーク分離に用いられている Network Namespace 機能と互換性がないことが課題となっている．特に，Kubernates の Pod などで必要となる，複数のコンテナ間で共有されたネットワーク空間を実現することが難しい．本研究では，jail の入れ子構造の仕組みを活用して，FreeBSD 上で Linux Network Namespace 互換機能を実装し，コンテナランタイムから CNI 仕様に準拠したコンテナネットワーキング制御を可能にすることで，異種 OS 上での動作を隠蔽できる Linux 互換コンテナネットワーキングを実現する．},
-  bibtex_show={true}
 }
 
 
@@ -285,7 +281,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   pages	 = "22--29",
   month	 = "nov",
   abstract = "クラウドサービスにおけるアプリケーション実行環境として広く活用されているコンテナ型仮想化は，不特定多数のユーザが単一のホスト内に同居するため，コンテナ間の隔離を強固にする必要がある．しかし，追加の隔離環境は，堅牢なコンテナ間隔離を実現する代わりに，コンテナの高速な起動という特性やアプリケーション性能が損なわれる．このトレードオフを解消するために，我々は異種 OS 機能連携によって OS カーネルの脆弱性を悪用した攻撃を回避し，異種 OS 固有のセキュリティ機能を利用できるセキュアコンテナの実現を目指している．本稿では，FreeBSD の OS 機能を活用した Linux コンテナ互換実行と FreeBSD 固有のセキュリティ機能の適用について検討し，異種 OS 機能連携による特定 OS カーネルを対象にした攻撃回避の実現可能性について議論する．",
-  bibtex_show={true}
 }
 
 @inproceedings{weko_209511_1,
@@ -297,7 +292,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   number	 = "16",
   month	 = "feb",
   abstract = "システムの拡張性や可用性などを向上する設計手法のひとつとして，マイクロサービス・アーキテクチャが注目されている．一方，マイクロサービス型システムでは，負荷に応じたスケールアウトなどの対応により，コンポーネントの数やそれらの依存関係が動的に変化する．分散システムの障害が複数要因の組み合わせで起きる傾向とあいまって，これら依存関係の動的変化は，マイクロサービス型システムの監視における障害発生時の状態把握や障害原因の追究を難しくしている．著者らは，依存関係の動的変化をともなう分散システムを対象とした監視において，コンポーネント間の依存関係に着目しつつ，システムの状態を迅速に把握できる可視化手法を提案している．本研究は，マイクロサービス型システムの監視において収集されるメトリックを管理するデータベースとして，グラフ DB の採用を検討する．本稿では，依存関係に着目したシステム状態可視化にともなって発行されるメトリック問い合わせを分析することで，依存関係情報や各メトリックの保存と探索におけるグラフ DB の有用性を議論する．また，監視ツールの評価に用いるためのマイクロサービス型システムの監視テストベッドの構築についても紹介する．",
-  bibtex_show={true}
 }
 
 @inproceedings{weko_208087_1,
@@ -310,7 +304,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   pages	 = "18--25",
   month	 = "nov",
   abstract = "マルチテナント方式のクラウドサービス基盤では，各テナントが平等にリソースを使用できる公平性，テナント間分離による性能低下を抑えたインスタンス性能，既存アプリケーションを改変せずに実行可能とする利便性の3つのサービス品質に十分な配慮を行う必要がある．近年注目されているコンテナ型仮想化技術によるクラウドサービス基盤では，複数のテナントそれぞれに対して，1つのプラットフォーム上で動作するプロセス単位で分離したインスタンスを提供する．その際に広く用いられているOSによるネットワークインタフェースの多重化方式は，パケット送受信の際に多くのOS機能を経由することでネットワークI/O性能が低下する課題がある．この課題に対して，OSカーネルのバイパスなどの高速にパケット処理を行うパケット送受信経路の最適化技術や，軽量なOS機能の実装などのOS処理に対する最適化技術がある．しかし，これらの手法は，トラフィックの公平性，ネットワークI/O性能，利便性のサービス品質すべてを最適にすることが難しい．本研究では，各テナントに割り当てたプロセスのそれぞれに対して，ハードウェア仮想化技術を用いた軽量ハイパーバイザにより実現する仮想ネットワークインタフェースを提供し，ネットワークI/O性能と利便性を最大限維持しつつ，それら仮想ネットワークインタフェースへのトラフィック制御によりテナント間の公平性を実現する手法を提案する．本手法は，コンテナ型仮想化技術向けのネットワーク機能においてハードウェア仮想化技術を併用することで，OSカーネルのバイパスなどを使用した際のトラフィック制御，複数のOS機能間経由にともなう冗長処理削減による性能低下抑制，既存OS向けアプリケーションをそのまま利用できる利便性を両立できる．",
-  bibtex_show={true},
   award={Best Presentation Award for Young Scientists, the 32nd IPSJ Computer Systems Symposium (ComSys2020) and IPSJ Computer Science Research Award for Young Scientists, Information Processing Society of Japan (IPSJ)}
 }
 
@@ -338,7 +331,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   number	 = "12",
   month	 = "feb",
   abstract = "近年，コンテナ型仮想化技術を用いて，マルチテナント向けクラウドコンピューティング基盤を実現する事例が増えている．コンテナ型仮想化システムでは，OS カーネルを共有しつつ，プロセス単位で OS リソースを多重化することで，各コンテナ環境を隔離する．しかし，隔離空間から抜けて，他コンテナに対しての攻撃が可能な OS リソースや機能が存在する．これらの利用は実行権限によって制限されているが，粒度が不十分である．従来，これらの OS リソースの制限をおこなうために，コンテナのセキュリティ機能を用いた制御，仮想マシンを用いた OS 多重化による隔離，ユーザランドにおけるネットワークスタックの再構築などの手法が提案されている．しかし，これらの手法は，設定が柔軟でなかったり，ネットワークのオーバヘッドを増大させる課題があった．本研究では，ハードウェア仮想化技術を用いつつ，OS を多重化せずに軽量かつ柔軟なネットワーク隔離手法を提案する．",
-  bibtex_show={true}
 }
 
 @article{1520853833389679360,
@@ -352,7 +344,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   number="7",
   pages="83-90",
   URL="https://cir.nii.ac.jp/crid/1520853833389679360",
-  bibtex_show={true}
 }
 
 @inproceedings{weko_190294_1,
@@ -365,7 +356,6 @@ slides = {https://speakerdeck.com/chikuwait/os167},
   number	 = "1",
   pages	 = "1-8",
   month	 = "jun",
-  bibtex_show={true}
 }
 
 
