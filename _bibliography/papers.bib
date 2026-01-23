@@ -18,7 +18,6 @@
   location = {Vanderbilt University, Nashville, TN, USA},
   series = {Mid4CC '25},
   abbr= {Reviewed},
-  selected={true},
 }
 
 @inproceedings{wasmcon-na,
@@ -31,6 +30,22 @@
   abbr= {Reviewed},
   website= {https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/co-located-events/wasmcon/},
   slides = {https://static.sched.com/hosted_files/colocatedeventsna2025/fa/self-hosted_runtime_wasmcon.pdf},
+}
+
+@INPROCEEDINGS{cander-yuzuki,
+  author={Matsubara, Katsuya and Saito, Yuzuki and Fujii, Daigo and Nakata, Yuki},
+  booktitle={2025 Thirteenth International Symposium on Computing and Networking Workshops (CANDARW)}, 
+  title={Seamless Self-Healing in WebAssembly Container Orchestration with Runtime-Neutral Checkpointing}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={29-35},
+  keywords={Checkpointing;Cloud computing;Runtime;Switches;Containers;Webassembly;Prediction algorithms;Monitoring;Resilience;Edge computing;Dependable System;Fault Tolerance;Cloud Computing;Edge Computing;Live Migration;Kubernetes},
+  doi={10.1109/CANDARW68385.2025.00013},
+  abbr = {International Conf.},
+  selected= true,
+  month={Nov},
+  abstract= {Modern cloud-native systems increasingly rely on WebAssembly (Wasm) containers for their lightweight nature and fast startup times. However, ensuring high availability in the face of inevitable failures remains a critical challenge. Traditional selfhealing mechanisms, often based on simple container restarts, cause service disruption and performance degradation. This paper presents a novel approach to achieve seamless self-healing in Wasm container orchestration by leveraging a runtime-neutral checkpointing framework. This framework, developed in our prior work, captures an application’s complete execution state independent of any specific runtime implementation. Building on this foundation, we demonstrate how this capability enables two key functions: hot restart and dynamic runtime switching. Hot restart allows a failed container to be restored from a checkpoint in milliseconds, eliminating the overhead of a cold startup. More importantly, we introduce a new paradigm for memory pressure alleviation without Pod eviction. By utilizing our runtime-neutral checkpoints, the orchestration system can gracefully switch a running application from a high-performance runtime (e.g., WasmEdge) to a more memory-efficient one (e.g., WAMR) when resources are constrained. Our empirical evaluation confirms that this approach effectively alleviates memory pressure while causing only a minimal, short-lived performance impact, proving to be a superior alternative to disruptive evictionbased methods.}
 }
 
 @inproceedings{japan_community_day_2025,
