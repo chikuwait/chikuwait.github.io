@@ -67,6 +67,13 @@
     }
   ],
   "community activities": [
+        {
+      "role": "Program Committee Member",
+      "startDate": "2025-10",
+      "endDate": "2026-3",
+      "society": "WasmCon EU (KubeCon + CloudNativeCon EU 2026 CNCF Co-located Event)",
+      "url": "https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/wasmcon/"
+    },
     {
       "role": "Steering Committee Member",
       "startDate": "2025-04",
