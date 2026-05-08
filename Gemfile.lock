@@ -50,7 +50,7 @@ GEM
       time (< 1.0)
     csl-styles (2.0.1)
       csl (~> 2.0)
-    css_parser (1.21.1)
+    css_parser (1.22.0)
       addressable
     cssminify2 (2.0.1)
     csv (3.3.5)
