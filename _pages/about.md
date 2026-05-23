@@ -17,7 +17,7 @@ social: true # includes social icons at the bottom of the page
 <p>
 I'm a Ph.D student at OS and System Software Lab., <a href='https://www.fun.ac.jp/en/outline-of-study'>Graduate School of Systems Information Science, Future University Hakodate</a>.
 My advisors are <a href='https://www.fun.ac.jp/en/faculty/inamura-hiroshi'>Prof. Hiroshi Inamura</a> and <a href='https://www.fun.ac.jp/en/faculty/matsubara-katsuya'>Prof. Katsuya Matsubara</a>.
-In addition, I'm working full-time on research and development at <a href='https://research.sakura.ad.jp/'>Research Center</a>, <a href='https://www.sakura.ad.jp/corporate/en/'>SAKURA internet Inc., which provides cloud computing and HPC services for the Japanese market.</a>.
+In addition, I'm working full-time on research and development at <a href='https://research.sakura.ad.jp/'>Research Center</a>, <a href='https://www.sakura.ad.jp/corporate/en/'>SAKURA internet Inc</a>, which provides cloud computing and HPC services for the Japanese market.
 </p>
 <p>
 My Research interests are mainly system software for cloud-computing, Edge-computing, and distributed computing, such as Operating Systems, Virtualization, Software Defined Networking, and Programming Language Runtime.
