@@ -1,5 +1,20 @@
 ---
 ---
+@inproceedings{admnet2026,
+  author = {Sakamoto, Kotaro and Nakata, Yuki and Matsubara, Katsuya and Sakaguchi, Soma and Suzuki, Shintaro},
+  title = {Cross-OS Container Transplantation: A Lightweight Defense Against Kernel and Network Exploits},
+  year = {2026},
+  month = {Jul},
+  url = {https://doi.org/10.1109/COMPSAC69091.2026.00275},
+  doi = {10.1109/COMPSAC69091.2026.00275},
+  abstract = {Container virtualization has become a dominant technology for deploying lightweight applications in cloud environments. However, because containers share the host OS kernel, they remain vulnerable to attacks that exploit kernel and network stack implementations. We propose Cross-OS Container Transplantation, which enhances security by running Linux binaries on FreeBSD via the Linuxulator emulation layer. By replacing Linux-specific kernel and network components with FreeBSD implementations, our method fundamentally mitigates implementation-dependent attacks. Additionally, we integrate the Capsicum framework for fine-grained sandboxing. Penetration testing demonstrates that our approach effectively thwarts attacks exploiting critical vulnerabilities. Performance evaluation indicates that our method achieves a significantly faster total container startup time than Kata Containers, while remaining comparable to native runC. With minimal runtime overhead, Cross-OS Container Transplantation provides a robust and lightweight defense against cross-layer exploits in containerized environments.},
+  booktitle={2026 IEEE 50th Annual Computers, Software, and Applications Conference (COMPSAC)},
+  pages = {1882-1888},
+  keywords = {secure containers, attack surface reduction, cloud native computing},
+  location = {Universidad Politécnica de Madrid, Madrid, Spain},
+  abbr= {Reviewed}
+}
+
 @article{published_papers/46105696,
   title = {Bring Cloud-Native Networking to FreeBSD Jails: Porting Calico from Linux},
   author = {Sakaguchi, Soma and Suzuki, Shintaro and Nakata, Yuki and Matsubara, Katsuya},
