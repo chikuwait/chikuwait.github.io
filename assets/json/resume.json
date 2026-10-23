@@ -74,10 +74,17 @@
     },
     {
       "role": "Program Committee Member",
+      "startDate": "2026-6",
+      "endDate": "2026-11",
+      "society": "Kubernetes on Edge Day NA (KubeCon + CloudNativeCon NA 2026 CNCF Co-located Event)",
+      "url": "https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/co-located-events/kubernetes-on-edge-day/"
+    },
+    {
+      "role": "Program Committee Member",
       "startDate": "2025-10",
       "endDate": "2026-3",
       "society": "WasmCon EU (KubeCon + CloudNativeCon EU 2026 CNCF Co-located Event)",
-      "url": "https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/wasmcon/"
+      "url": "https://events.linuxfoundation.org/archive/2026/kubecon-cloudnativecon-europe/co-located-events/wasmcon/"
     },
     {
       "role": "Steering Committee Member",
